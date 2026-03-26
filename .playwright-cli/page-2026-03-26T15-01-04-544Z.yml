@@ -1,0 +1,97 @@
+- generic [active] [ref=e1]:
+  - img
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - generic [ref=e8]: 欢迎来到好采云采购平台！
+          - generic [ref=e9]: 请登录 注册
+        - generic [ref=e10]:
+          - button "我的好采云采购平台 " [ref=e13] [cursor=pointer]:
+            - generic [ref=e14]:
+              - text: 我的好采云采购平台
+              - generic [ref=e15]: 
+          - generic [ref=e18] [cursor=pointer]: 在线客服
+          - generic [ref=e22] [cursor=pointer]: 手机好采云采购平台
+      - generic [ref=e24]:
+        - generic [ref=e25]:
+          - generic [ref=e26]:
+            - combobox [ref=e27]:
+              - textbox "搜索商品名称/商品型号等" [ref=e29]
+            - button "搜索" [ref=e30] [cursor=pointer]
+            - button "快速下单" [ref=e31] [cursor=pointer]:
+              - generic [ref=e32]: 快速下单
+          - paragraph
+        - generic [ref=e34] [cursor=pointer]: 我的购物车
+      - text: 
+    - generic [ref=e35]:
+      - generic [ref=e37]:
+        - generic [ref=e39]: 全部商品分类
+        - list [ref=e40]:
+          - listitem [ref=e41] [cursor=pointer]:
+            - menubar [ref=e42]:
+              - menuitem "资料中心" [ref=e43]:
+                - generic [ref=e44]:
+                  - generic [ref=e45]: 资料中心
+                  - text: 
+      - generic [ref=e47]:
+        - generic [ref=e48]:
+          - list
+        - generic [ref=e50]:
+          - generic [ref=e51]:  
+          - list
+    - generic [ref=e52]:
+      - list [ref=e54]:
+        - listitem [ref=e55]:
+          - generic [ref=e56]:
+            - generic [ref=e57]: 品类齐全
+            - generic [ref=e58]: 省心省力 一站式购齐
+        - listitem [ref=e59]:
+          - generic [ref=e60]:
+            - generic [ref=e61]: 货期保障
+            - generic [ref=e62]: 多仓直发 货期无忧
+        - listitem [ref=e63]:
+          - generic [ref=e64]:
+            - generic [ref=e65]: 正品货源
+            - generic [ref=e66]: 正品保障 诚信服务
+        - listitem [ref=e67]:
+          - generic [ref=e68]:
+            - generic [ref=e69]: 一对一客服
+            - generic [ref=e70]: 选型询价 快速响应
+      - generic [ref=e72]:
+        - generic [ref=e73]:
+          - generic [ref=e75]:
+            - generic [ref=e76]:
+              - paragraph [ref=e77]: 400服务热线：
+              - paragraph [ref=e78]: 400-788-0000
+            - paragraph [ref=e79]: 周一至周六 9:00-18:00
+            - paragraph [ref=e80] [cursor=pointer]: 在线咨询
+          - generic [ref=e81]:
+            - paragraph [ref=e83]: 小程序
+            - paragraph [ref=e85]: 微信公众号
+        - list [ref=e86]:
+          - listitem [ref=e87]
+          - listitem [ref=e88]
+          - listitem [ref=e89]
+          - listitem [ref=e90]
+          - listitem [ref=e91]
+          - listitem [ref=e92]
+          - listitem [ref=e93]
+          - listitem [ref=e94]
+        - generic [ref=e95]:
+          - paragraph [ref=e96]:
+            - generic [ref=e97]: 好采云采购铝合金门窗五金采购平台
+            - link "HOPO好博窗控" [ref=e99] [cursor=pointer]:
+              - /url: http://www.hopo.com.cn
+          - generic [ref=e100]:
+            - text: CopyRight © 2015-2026版权所有 好采云采购铝合金门窗五金采购平台
+            - link "www.boass.com" [ref=e101] [cursor=pointer]:
+              - /url: https://www.boass.com
+            - link "粤ICP备18058731号-2" [ref=e102] [cursor=pointer]:
+              - /url: https://beian.miit.gov.cn
+    - generic [ref=e103]:
+      - generic [ref=e105] [cursor=pointer]: 返回顶部
+      - generic [ref=e107] [cursor=pointer]: 下单指南
+      - generic [ref=e109] [cursor=pointer]: 在线客服
+      - generic [ref=e111] [cursor=pointer]: 意见反馈
+    - text: 

@@ -1,0 +1,426 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - link [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]
+      - generic [ref=e8]:
+        - heading "首页" [level=3] [ref=e10]:
+          - link "首页" [ref=e11] [cursor=pointer]:
+            - /url: /
+        - generic [ref=e12]:
+          - heading "品牌" [level=3] [ref=e13]:
+            - link "品牌" [ref=e14] [cursor=pointer]:
+              - /url: /brand/story/
+          - generic [ref=e16]:
+            - link "品牌故事" [ref=e18] [cursor=pointer]:
+              - /url: /brand/story/
+            - link "品牌家族" [ref=e20] [cursor=pointer]:
+              - /url: /brand/family/
+            - link "品牌优势" [ref=e22] [cursor=pointer]:
+              - /url: /brand/advantage/
+            - link "荣誉资质" [ref=e24] [cursor=pointer]:
+              - /url: /brand/honor/
+        - generic [ref=e25]:
+          - heading "方案" [level=3] [ref=e26]:
+            - link "方案" [ref=e27] [cursor=pointer]:
+              - /url: /case/
+          - generic [ref=e29]:
+            - link "南方沿海" [ref=e31] [cursor=pointer]:
+              - /url: /case/9.html
+            - link "南方内陆" [ref=e33] [cursor=pointer]:
+              - /url: /case/10.html
+            - link "北方沿海" [ref=e35] [cursor=pointer]:
+              - /url: /case/11.html
+            - link "北方内陆" [ref=e37] [cursor=pointer]:
+              - /url: /case/12.html
+        - generic [ref=e38]:
+          - heading "产品" [level=3] [ref=e39]:
+            - link "产品" [ref=e40] [cursor=pointer]:
+              - /url: /product/ndpyxkcwjfa/341.html
+          - generic [ref=e41]:
+            - list [ref=e43]:
+              - listitem [ref=e44]:
+                - link "内倒平移炫开窗五金系统方案" [ref=e45] [cursor=pointer]:
+                  - /url: /product/ndpyxkcwjfa/341.html
+                  - generic [ref=e47]: 内倒平移炫开窗五金系统方案
+              - listitem [ref=e48]:
+                - link "内开内倒窗五金系统方案" [ref=e49] [cursor=pointer]:
+                  - /url: /product/nkndwjmcxt/161.html
+                  - generic [ref=e51]: 内开内倒窗五金系统方案
+              - listitem [ref=e52]:
+                - link "悬挂外开窗五金系统方案" [ref=e53] [cursor=pointer]:
+                  - /url: /product/xgwkcwjxtfa/164.html
+                  - generic [ref=e55]: 悬挂外开窗五金系统方案
+              - listitem [ref=e56]:
+                - link "推拉密封窗五金系统方案" [ref=e57] [cursor=pointer]:
+                  - /url: /product/tlcwjxtfa/186.html
+                  - generic [ref=e59]: 推拉密封窗五金系统方案
+              - listitem [ref=e60]:
+                - link "外开窗纱一体五金系统方案" [ref=e61] [cursor=pointer]:
+                  - /url: /product/scytwjxtfa/253.html
+                  - generic [ref=e63]: 外开窗纱一体五金系统方案
+              - listitem [ref=e64]:
+                - link "平开门五金系统方案" [ref=e65] [cursor=pointer]:
+                  - /url: /product/pkmwjxtfa/250.html
+                  - generic [ref=e67]: 平开门五金系统方案
+              - listitem [ref=e68]:
+                - link "提升推拉门五金系统方案" [ref=e69] [cursor=pointer]:
+                  - /url: /product/tstlmwjxtfa/252.html
+                  - generic [ref=e71]: 提升推拉门五金系统方案
+              - listitem [ref=e72]:
+                - link "折叠门五金系统方案" [ref=e73] [cursor=pointer]:
+                  - /url: /product/zdmwjxtfa/251.html
+                  - generic [ref=e75]: 折叠门五金系统方案
+              - listitem [ref=e76]:
+                - link "推拉门五金系统方案" [ref=e77] [cursor=pointer]:
+                  - /url: /product/tlmwjxtfa/248.html
+                  - generic [ref=e79]: 推拉门五金系统方案
+              - listitem [ref=e80]:
+                - link "双轨推拉密封窗五金系统方案" [ref=e81] [cursor=pointer]:
+                  - /url: /product/sgzbtlmfcwjfa/340.html
+                  - generic [ref=e83]: 双轨推拉密封窗五金系统方案
+              - listitem [ref=e84]:
+                - link "窄边推拉三联动门五金系统方案" [ref=e85] [cursor=pointer]:
+                  - /url: /product/sldmwjxtfa/331.html
+                  - generic [ref=e87]: 窄边推拉三联动门五金系统方案
+              - listitem [ref=e88]:
+                - link "生态门五金系统方案" [ref=e89] [cursor=pointer]:
+                  - /url: /product/stmwjxtfa/344.html
+                  - generic [ref=e91]: 生态门五金系统方案
+              - listitem [ref=e92]:
+                - link "智慧家居门窗控制终端" [ref=e93] [cursor=pointer]:
+                  - /url: /product/zhjjmckzzd/280.html
+                  - generic [ref=e95]: 智慧家居门窗控制终端
+              - listitem [ref=e96]:
+                - link "外观执手" [ref=e97] [cursor=pointer]:
+                  - /url: /product/handle/
+                  - generic [ref=e99]: 外观执手
+            - generic [ref=e101]:
+              - generic:
+                - list
+              - generic:
+                - list
+              - generic:
+                - list
+              - generic:
+                - list
+              - generic:
+                - list
+              - generic:
+                - list
+              - generic:
+                - list
+              - generic:
+                - list
+              - generic:
+                - list
+              - generic:
+                - list
+              - generic:
+                - list
+              - generic:
+                - list
+              - generic:
+                - list:
+                  - listitem:
+                    - link "重型电动提升窗五金系统方案":
+                      - /url: /product/zxddtscwjxtfa/297.html
+                      - generic: 重型电动提升窗五金系统方案
+                  - listitem:
+                    - link "隐藏式电动内开内倒窗五金系统方案":
+                      - /url: /product/ndpyxkcwjfa/295.html
+                      - generic: 隐藏式电动内开内倒窗五金系统方案
+                  - listitem:
+                    - link "隐藏式电动外平开窗五金系统方案":
+                      - /url: /product/zhjjmckzzd/298.html
+                      - generic: 隐藏式电动外平开窗五金系统方案
+                  - listitem:
+                    - link "隐藏式电动悬挂外开窗五金系统方案":
+                      - /url: /product/zhjjmckzzd/299.html
+                      - generic: 隐藏式电动悬挂外开窗五金系统方案
+                  - listitem:
+                    - link "电动平推窗五金系统方案":
+                      - /url: /product/zhjjmckzzd/300.html
+                      - generic: 电动平推窗五金系统方案
+                  - listitem:
+                    - link "极窄电动推拉门系统方案":
+                      - /url: /product/jzddtlm/787.html
+                      - generic: 极窄电动推拉门系统方案
+              - generic:
+                - list:
+                  - listitem:
+                    - link "无基座方轴执手":
+                      - /url: /product/handle/
+                      - generic: 无基座方轴执手
+                  - listitem:
+                    - link "有基座方轴执手":
+                      - /url: ""
+                      - generic: 有基座方轴执手
+        - generic [ref=e102]:
+          - heading "服务" [level=3] [ref=e103]:
+            - link "服务" [ref=e104] [cursor=pointer]:
+              - /url: /service/system/
+          - generic [ref=e106]:
+            - link "钻石服务体系" [ref=e108] [cursor=pointer]:
+              - /url: /service/system/
+            - link "热门咨询" [ref=e110] [cursor=pointer]:
+              - /url: /service/consult/
+            - link "资料下载" [ref=e112] [cursor=pointer]:
+              - /url: /service/download/
+            - link "帮助中心" [ref=e114] [cursor=pointer]:
+              - /url: /service/help/
+            - link "授权证书查询" [ref=e116] [cursor=pointer]:
+              - /url: /anti/
+            - link "HOPO防伪说明" [ref=e118] [cursor=pointer]:
+              - /url: /mc315/
+        - generic [ref=e119]:
+          - heading "研究" [level=3] [ref=e120]:
+            - link "研究" [ref=e121] [cursor=pointer]:
+              - /url: /study/achievement/
+          - generic [ref=e123]:
+            - link "组织机制" [ref=e125] [cursor=pointer]:
+              - /url: /study/achievement/
+            - link "研发成果" [ref=e127] [cursor=pointer]:
+              - /url: /study/organization/
+        - generic [ref=e128]:
+          - heading "资讯" [level=3] [ref=e129]:
+            - link "资讯" [ref=e130] [cursor=pointer]:
+              - /url: /news/brand/
+          - generic [ref=e132]:
+            - link "品牌资讯" [ref=e134] [cursor=pointer]:
+              - /url: /news/brand/
+            - link "行业报道" [ref=e136] [cursor=pointer]:
+              - /url: /news/industry/
+            - link "视频专区" [ref=e138] [cursor=pointer]:
+              - /url: /service/video/
+        - generic [ref=e139]:
+          - heading "商城" [level=3] [ref=e140]:
+            - link "商城" [ref=e141] [cursor=pointer]:
+              - /url: javascript:;
+          - generic [ref=e143]:
+            - link "官方商城" [ref=e145] [cursor=pointer]:
+              - /url: https://www.boass.com/#/index
+            - link "天猫商城" [ref=e147] [cursor=pointer]:
+              - /url: https://hopo.tmall.com/index.htm?spm=a220o.1000855.w5002-22295774204.2.d89368ceTg2AWv
+            - link "京东商城" [ref=e149] [cursor=pointer]:
+              - /url: https://www.jd.com/
+            - link "1688" [ref=e151] [cursor=pointer]:
+              - /url: https://hopock.1688.com/
+        - heading "企业" [level=3] [ref=e153]:
+          - link "企业" [ref=e154] [cursor=pointer]:
+            - /url: /enterprise/
+        - heading "联系" [level=3] [ref=e156]:
+          - link "联系" [ref=e157] [cursor=pointer]:
+            - /url: /contact/
+      - generic [ref=e158]:
+        - link "" [ref=e160] [cursor=pointer]:
+          - /url: javaScript:;
+        - text: 
+    - text:  
+  - generic [ref=e161]:
+    - generic [ref=e162]:
+      - generic [ref=e168]:
+        - text: 改变门窗
+        - text: 让地球更绿色 让生活更美好
+      - img "59428037" [ref=e172]
+    - generic [ref=e181]:
+      - generic [ref=e182] [cursor=pointer]: "01"
+      - generic [ref=e183] [cursor=pointer]: "02"
+      - generic [ref=e184] [cursor=pointer]: "03"
+      - generic [ref=e185] [cursor=pointer]: "04"
+  - generic [ref=e187]:
+    - generic [ref=e188]:
+      - generic [ref=e189]: 产品中心
+      - generic [ref=e190]: 针对全球气候与人居环境进行研制
+    - list [ref=e191]:
+      - listitem [ref=e192]:
+        - link "47962815 内开内倒窗五金系统方案" [ref=e193] [cursor=pointer]:
+          - /url: /product/nkndwjmcxt/161.html
+          - img "47962815" [ref=e195]
+          - generic [ref=e196]: 内开内倒窗五金系统方案
+      - listitem [ref=e197]:
+        - link "05971324 推拉密封窗五金 系统方案" [ref=e198] [cursor=pointer]:
+          - /url: /product/tlcwjxtfa/186.html
+          - img "05971324" [ref=e200]
+          - generic [ref=e201]:
+            - text: 推拉密封窗五金
+            - text: 系统方案
+      - listitem [ref=e202]:
+        - link "内倒平移炫开窗 五金系统方案" [ref=e203] [cursor=pointer]:
+          - /url: /product/ndpyxkcwjfa/158.html
+          - generic [ref=e205]:
+            - text: 内倒平移炫开窗
+            - text: 五金系统方案
+      - listitem [ref=e206]:
+        - link "悬挂外开窗五金 系统方案" [ref=e207] [cursor=pointer]:
+          - /url: /product/xgwkcwjxtfa/164.html
+          - generic [ref=e209]:
+            - text: 悬挂外开窗五金
+            - text: 系统方案
+  - generic [ref=e213]:
+    - definition [ref=e214]:
+      - link "北方内陆" [ref=e215] [cursor=pointer]:
+        - /url: javaScript:;
+    - definition [ref=e216]:
+      - link "北方沿海" [ref=e217] [cursor=pointer]:
+        - /url: javaScript:;
+    - definition [ref=e218]:
+      - link "南方内陆" [ref=e219] [cursor=pointer]:
+        - /url: javaScript:;
+    - definition [ref=e220]:
+      - link "南方沿海" [ref=e221] [cursor=pointer]:
+        - /url: javaScript:;
+  - generic [ref=e225]:
+    - definition [ref=e226]:
+      - link "HOPO" [ref=e227] [cursor=pointer]:
+        - /url: javaScript:;
+    - definition [ref=e228]:
+      - link "HOPO Pro" [ref=e229] [cursor=pointer]:
+        - /url: javaScript:;
+    - definition [ref=e230]:
+      - link "HOPO essential" [ref=e231] [cursor=pointer]:
+        - /url: javaScript:;
+    - definition [ref=e232]:
+      - link "HOPOsmart" [ref=e233] [cursor=pointer]:
+        - /url: javaScript:;
+  - generic [ref=e239]:
+    - generic [ref=e242]:
+      - list [ref=e243]:
+        - listitem [ref=e244]:
+          - link "品牌" [ref=e245] [cursor=pointer]:
+            - /url: /brand/story/
+          - link "品牌故事" [ref=e246] [cursor=pointer]:
+            - /url: /brand/story/
+          - link "品牌家族" [ref=e247] [cursor=pointer]:
+            - /url: /brand/family/
+          - link "品牌优势" [ref=e248] [cursor=pointer]:
+            - /url: /brand/advantage/
+          - link "荣誉资质" [ref=e249] [cursor=pointer]:
+            - /url: /brand/honor/
+        - listitem [ref=e250]:
+          - link "方案" [ref=e251] [cursor=pointer]:
+            - /url: /case/
+          - link "南方沿海" [ref=e252] [cursor=pointer]:
+            - /url: /case/9.html
+          - link "南方内陆" [ref=e253] [cursor=pointer]:
+            - /url: /case/10.html
+          - link "北方沿海" [ref=e254] [cursor=pointer]:
+            - /url: /case/11.html
+          - link "北方内陆" [ref=e255] [cursor=pointer]:
+            - /url: /case/12.html
+        - listitem [ref=e256]:
+          - link "产品" [ref=e257] [cursor=pointer]:
+            - /url: /product/ndpyxkcwjfa/341.html
+          - link "内倒平移炫开窗五金系统方案" [ref=e258] [cursor=pointer]:
+            - /url: /product/ndpyxkcwjfa/341.html
+          - link "内开内倒窗五金系统方案" [ref=e259] [cursor=pointer]:
+            - /url: /product/nkndwjmcxt/161.html
+          - link "悬挂外开窗五金系统方案" [ref=e260] [cursor=pointer]:
+            - /url: /product/xgwkcwjxtfa/164.html
+          - link "推拉密封窗五金系统方案" [ref=e261] [cursor=pointer]:
+            - /url: /product/tlcwjxtfa/186.html
+          - link "外开窗纱一体五金系统方案" [ref=e262] [cursor=pointer]:
+            - /url: /product/scytwjxtfa/253.html
+          - link "平开门五金系统方案" [ref=e263] [cursor=pointer]:
+            - /url: /product/pkmwjxtfa/250.html
+          - link "提升推拉门五金系统方案" [ref=e264] [cursor=pointer]:
+            - /url: /product/tstlmwjxtfa/252.html
+          - link "折叠门五金系统方案" [ref=e265] [cursor=pointer]:
+            - /url: /product/zdmwjxtfa/251.html
+          - link "推拉门五金系统方案" [ref=e266] [cursor=pointer]:
+            - /url: /product/tlmwjxtfa/248.html
+          - link "双轨推拉密封窗五金系统方案" [ref=e267] [cursor=pointer]:
+            - /url: /product/sgzbtlmfcwjfa/340.html
+          - link "窄边推拉三联动门五金系统方案" [ref=e268] [cursor=pointer]:
+            - /url: /product/sldmwjxtfa/331.html
+          - link "生态门五金系统方案" [ref=e269] [cursor=pointer]:
+            - /url: /product/stmwjxtfa/344.html
+          - link "智慧家居门窗控制终端" [ref=e270] [cursor=pointer]:
+            - /url: /product/zhjjmckzzd/280.html
+          - link "外观执手" [ref=e271] [cursor=pointer]:
+            - /url: /product/handle/
+        - listitem [ref=e272]:
+          - link "服务" [ref=e273] [cursor=pointer]:
+            - /url: /service/system/
+          - link "钻石服务体系" [ref=e274] [cursor=pointer]:
+            - /url: /service/system/
+          - link "热门咨询" [ref=e275] [cursor=pointer]:
+            - /url: /service/consult/
+          - link "资料下载" [ref=e276] [cursor=pointer]:
+            - /url: /service/download/
+          - link "帮助中心" [ref=e277] [cursor=pointer]:
+            - /url: /service/help/
+          - link "授权证书查询" [ref=e278] [cursor=pointer]:
+            - /url: /anti//anti/
+          - link "HOPO防伪说明" [ref=e279] [cursor=pointer]:
+            - /url: /mc315/
+        - listitem [ref=e280]:
+          - link "研究" [ref=e281] [cursor=pointer]:
+            - /url: /study/achievement/
+          - link "组织机制" [ref=e282] [cursor=pointer]:
+            - /url: /study/achievement/
+          - link "研发成果" [ref=e283] [cursor=pointer]:
+            - /url: /study/organization/
+        - listitem [ref=e284]:
+          - link "资讯" [ref=e285] [cursor=pointer]:
+            - /url: /news/brand/
+          - link "品牌资讯" [ref=e286] [cursor=pointer]:
+            - /url: /news/brand/
+          - link "行业报道" [ref=e287] [cursor=pointer]:
+            - /url: /news/industry/
+          - link "视频专区" [ref=e288] [cursor=pointer]:
+            - /url: /service/video/
+        - listitem [ref=e289]:
+          - link "商城" [ref=e290] [cursor=pointer]:
+            - /url: javascript:;
+          - link "官方商城" [ref=e291] [cursor=pointer]:
+            - /url: https://www.boass.com/#/index
+          - link "天猫商城" [ref=e292] [cursor=pointer]:
+            - /url: https://hopo.tmall.com/index.htm?spm=a220o.1000855.w5002-22295774204.2.d89368ceTg2AWv
+          - link "京东商城" [ref=e293] [cursor=pointer]:
+            - /url: https://www.jd.com/
+          - link "1688" [ref=e294] [cursor=pointer]:
+            - /url: https://hopock.1688.com/
+        - listitem [ref=e295]:
+          - link "企业" [ref=e296] [cursor=pointer]:
+            - /url: /enterprise/
+          - link "企业介绍" [ref=e297] [cursor=pointer]:
+            - /url: /enterprise/
+        - listitem [ref=e298]:
+          - link "联系" [ref=e299] [cursor=pointer]:
+            - /url: /contact/
+      - generic [ref=e300]:
+        - generic [ref=e302]:
+          - generic [ref=e303]: 400-788-0000
+          - generic [ref=e304]: 全国免费咨询热线
+        - generic [ref=e305]:
+          - link [ref=e306] [cursor=pointer]:
+            - /url: https://www.boass.com/#/index
+          - link [ref=e308] [cursor=pointer]:
+            - /url: https://hopock.1688.com/
+          - link [ref=e310] [cursor=pointer]:
+            - /url: https://hopo.tmall.com/shop/view_shop.htm?spm=a220o.1000855.w5002-22295774204.2.d89368ceTg2AWv#/
+          - link [ref=e312] [cursor=pointer]:
+            - /url: https://www.jd.com/
+        - link "授权证书查询 " [ref=e314] [cursor=pointer]:
+          - /url: /anti/
+          - text: 授权证书查询
+          - generic [ref=e315]: 
+    - generic [ref=e319]:
+      - generic [ref=e320]:
+        - generic [ref=e321]: 跨越经纬的人居梦想
+        - link "查看更多 " [ref=e322] [cursor=pointer]:
+          - /url: /brand/story/
+          - text: 查看更多
+          - generic [ref=e323]: 
+      - generic [ref=e324]:
+        - generic [ref=e325]:
+          - generic [ref=e326]: ©2026 All rights reserved 深圳好博窗控技术股份有限公司
+          - link "粤ICP备13082422号-1" [ref=e328] [cursor=pointer]:
+            - /url: https://beian.miit.gov.cn/
+        - generic [ref=e329]:
+          - link "网站地图" [ref=e330] [cursor=pointer]:
+            - /url: /map/
+          - link "Powered by szweb" [ref=e331] [cursor=pointer]:
+            - /url: https://www.szweb.cn

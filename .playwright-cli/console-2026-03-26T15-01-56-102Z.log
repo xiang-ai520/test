@@ -1,0 +1,13 @@
+[      18ms] [ERROR] Failed to load resource: net::ERR_SSL_PROTOCOL_ERROR @ https://hm.baidu.com/hm.js?3bfe6ba60fef4834160cefe573f66f10:0
+[      59ms] [ERROR] Failed to load resource: net::ERR_SSL_PROTOCOL_ERROR @ https://hm.baidu.com/hm.js?3bfe6ba60fef4834160cefe573f66f10:0
+[    1364ms] [ERROR] TypeError: Cannot read properties of null (reading 'product_sn')
+    at Zsle.e.default (https://www.boass.com/static/js/chunk-0cfd.968f20801773996200714.js:1:58811)
+    at t._render (https://www.boass.com/static/js/chunk-libs.43a4084a1773996200714.js:74:35395)
+    at dn.before (https://www.boass.com/static/js/chunk-libs.43a4084a1773996200714.js:74:64408)
+    at dn.get (https://www.boass.com/static/js/chunk-libs.43a4084a1773996200714.js:74:26758)
+    at new dn (https://www.boass.com/static/js/chunk-libs.43a4084a1773996200714.js:74:26676)
+    at t (https://www.boass.com/static/js/chunk-libs.43a4084a1773996200714.js:74:64376)
+    at En.$mount (https://www.boass.com/static/js/chunk-libs.43a4084a1773996200714.js:74:64558)
+    at init (https://www.boass.com/static/js/chunk-libs.43a4084a1773996200714.js:74:19484)
+    at https://www.boass.com/static/js/chunk-libs.43a4084a1773996200714.js:74:52532
+    at f (https://www.boass.com/static/js/chunk-libs.43a4084a1773996200714.js:74:52808) @ https://www.boass.com/static/js/chunk-libs.43a4084a1773996200714.js:0

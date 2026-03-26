@@ -1,0 +1,245 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - button "跳至内容" [ref=e3] [cursor=pointer]:
+      - generic [ref=e5]: 跳至内容
+    - button "辅助功能反馈" [ref=e6] [cursor=pointer]:
+      - generic [ref=e8]: 辅助功能反馈
+    - generic [ref=e9]:
+      - link "返回到必应搜索" [ref=e10] [cursor=pointer]:
+        - /url: /?FORM=Z9FD1
+        - heading "返回到必应搜索" [level=1] [ref=e11]
+      - search [ref=e12]:
+        - button "搜索" [ref=e15] [cursor=pointer]
+        - searchbox "在此处输入你的搜索 — 输入时会显示搜索建议" [ref=e16]: 好博 官网
+        - button "使用图像搜索" [ref=e19] [cursor=pointer]
+        - status [ref=e21]
+    - complementary "帐户奖励和偏好设置" [ref=e22]:
+      - button "Microsoft Rewards" [ref=e23] [cursor=pointer]:
+        - generic [ref=e25]:
+          - generic [ref=e26]: Rewards
+          - img [ref=e28]
+      - link "登录" [ref=e40] [cursor=pointer]:
+        - /url: javascript:void(0)
+        - generic "登录" [ref=e41]
+    - navigation "主菜单" [ref=e42]:
+      - list [ref=e43]:
+        - listitem [ref=e44]:
+          - link "全部" [ref=e45] [cursor=pointer]:
+            - /url: /?scope=web&FORM=HDRSC1
+        - listitem [ref=e46]:
+          - link "搜索" [ref=e47] [cursor=pointer]:
+            - /url: /copilotsearch?q=%e5%a5%bd%e5%8d%9a+%e5%ae%98%e7%bd%91&FORM=CSSCOP
+            - img [ref=e48]
+            - text: 搜索
+        - listitem [ref=e50]:
+          - link "图片" [ref=e51] [cursor=pointer]:
+            - /url: https://www.bing.com/ck/a?!&&p=390dbab91645a3be789d9027c8282de61e3caa61905c167d487f2c5100b01de4JmltdHM9MTc3NDQ4MzIwMA&ptn=3&ver=2&hsh=4&fclid=38296057-1e68-6a0c-198c-777f1fc66bc5&u=a1L2ltYWdlcy9zZWFyY2g_cT0lZTUlYTUlYmQlZTUlOGQlOWErJWU1JWFlJTk4JWU3JWJkJTkxJkZPUk09SERSU0My&ntb=1
+        - listitem [ref=e52]:
+          - link "视频" [ref=e53] [cursor=pointer]:
+            - /url: https://www.bing.com/ck/a?!&&p=38f76750cfa3aa8efccc258ac43fcde6dc8651791dc1469c3e5c785bb04d743eJmltdHM9MTc3NDQ4MzIwMA&ptn=3&ver=2&hsh=4&fclid=38296057-1e68-6a0c-198c-777f1fc66bc5&u=a1L3ZpZGVvcy9zZWFyY2g_cT0lZTUlYTUlYmQlZTUlOGQlOWErJWU1JWFlJTk4JWU3JWJkJTkxJkZPUk09SERSU0Mz&ntb=1
+        - listitem [ref=e54]:
+          - link "地图" [ref=e55] [cursor=pointer]:
+            - /url: https://www.bing.com/ck/a?!&&p=af10971a88b63169b5912de04d3e446f1f0b1f46eba4c1ebf6a8fd0d92587cdaJmltdHM9MTc3NDQ4MzIwMA&ptn=3&ver=2&hsh=4&fclid=38296057-1e68-6a0c-198c-777f1fc66bc5&u=a1L21hcHM_cT0lZTUlYTUlYmQlZTUlOGQlOWErJWU1JWFlJTk4JWU3JWJkJTkxJkZPUk09SERSU0M0&ntb=1
+        - listitem [ref=e56]:
+          - link "资讯" [ref=e57] [cursor=pointer]:
+            - /url: https://www.bing.com/ck/a?!&&p=824cb0bbf5a1be978c87ab8dbb8146b536aeebf8372370035dbc26a4ce88b385JmltdHM9MTc3NDQ4MzIwMA&ptn=3&ver=2&hsh=4&fclid=38296057-1e68-6a0c-198c-777f1fc66bc5&u=a1L25ld3Mvc2VhcmNoP3E9JWU1JWE1JWJkJWU1JThkJTlhKyVlNSVhZSU5OCVlNyViZCU5MSZGT1JNPUhEUlNDNg&ntb=1
+        - listitem [ref=e58]:
+          - button "更多" [ref=e59] [cursor=pointer]:
+            - img [ref=e61]
+            - text: 更多
+  - generic [ref=e63]:
+    - main "搜索结果" [ref=e64]:
+      - generic [ref=e66]: 约 117,000 个结果
+      - list [ref=e67]:
+        - listitem [ref=e68]:
+          - link "baidu.com" [ref=e70] [cursor=pointer]:
+            - /url: https://www.bing.com/ck/a?!&&p=63ad1a2a13b7b44e31109c436710fe85d5159efb1cda1d17f2102b4d36f4a753JmltdHM9MTc3NDQ4MzIwMA&ptn=3&ver=2&hsh=4&fclid=38296057-1e68-6a0c-198c-777f1fc66bc5&u=a1aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS8lRTUlQTUlQkQvMzI0MTA&ntb=1
+            - img "全球 Web 图标" [ref=e74]
+            - generic [ref=e75]:
+              - generic [ref=e76]: baidu.com
+              - generic [ref=e79]: https://baike.baidu.com › item
+          - heading "好（汉语文字）_百度百科" [level=2] [ref=e80]:
+            - link "好（汉语文字）_百度百科" [ref=e81] [cursor=pointer]:
+              - /url: https://www.bing.com/ck/a?!&&p=63ad1a2a13b7b44e31109c436710fe85d5159efb1cda1d17f2102b4d36f4a753JmltdHM9MTc3NDQ4MzIwMA&ptn=3&ver=2&hsh=4&fclid=38296057-1e68-6a0c-198c-777f1fc66bc5&u=a1aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS8lRTUlQTUlQkQvMzI0MTA&ntb=1
+              - strong [ref=e82]: 好
+              - text: （汉语文字）_百度百科
+          - paragraph [ref=e84]: 好（拼音：hǎo，hào）为汉语一级通用规范汉字（常用字）。 此字始见于商代甲骨文，古字形从女，从子。 “好”的本义学界有多种观点，一说指女子貌美。 一说本用于姓氏。 还有人认为，古人把妇女生 …
+        - listitem [ref=e85]:
+          - link "zdic.net" [ref=e87] [cursor=pointer]:
+            - /url: https://www.bing.com/ck/a?!&&p=b17d1926b95420a6606638e13d4ddaffb7362a0cb667bb104ca30a9c7568525aJmltdHM9MTc3NDQ4MzIwMA&ptn=3&ver=2&hsh=4&fclid=38296057-1e68-6a0c-198c-777f1fc66bc5&u=a1aHR0cHM6Ly93d3cuemRpYy5uZXQvaGFucy8lRTUlQTUlQkQ&ntb=1
+            - img "全球 Web 图标" [ref=e91]
+            - generic [ref=e92]:
+              - generic [ref=e93]: zdic.net
+              - generic [ref=e96]: https://www.zdic.net › hans
+          - heading "好的解释|好的意思|汉典“好”字的基本解释 - 漢典" [level=2] [ref=e97]:
+            - link "好的解释|好的意思|汉典“好”字的基本解释 - 漢典" [ref=e98] [cursor=pointer]:
+              - /url: https://www.bing.com/ck/a?!&&p=b17d1926b95420a6606638e13d4ddaffb7362a0cb667bb104ca30a9c7568525aJmltdHM9MTc3NDQ4MzIwMA&ptn=3&ver=2&hsh=4&fclid=38296057-1e68-6a0c-198c-777f1fc66bc5&u=a1aHR0cHM6Ly93d3cuemRpYy5uZXQvaGFucy8lRTUlQTUlQkQ&ntb=1
+              - strong [ref=e99]: 好
+              - text: 的解释|
+              - strong [ref=e100]: 好
+              - text: 的意思|汉典“
+              - strong [ref=e101]: 好
+              - text: ”字的基本解释 - 漢典
+          - paragraph [ref=e103]: (5) 健康 [in good health;get well]。 如:他看起来很好;他的健康状况仍然是很好的;好身手 (体格雄壮，身手矫健) (6) 容易 [be easy (to do);simple;likely]。 如:这个问题好回答;这事好办;好吃的果儿 (容易对付的 …
+        - listitem [ref=e104]:
+          - link "wiktionary.org" [ref=e106] [cursor=pointer]:
+            - /url: https://www.bing.com/ck/a?!&&p=fb62e781773bb45301d59813663bd9908dc064356387569ef9f6466b30874315JmltdHM9MTc3NDQ4MzIwMA&ptn=3&ver=2&hsh=4&fclid=38296057-1e68-6a0c-198c-777f1fc66bc5&u=a1aHR0cHM6Ly96aC53aWt0aW9uYXJ5Lm9yZy93aWtpLyVFNSVBNSVCRA&ntb=1
+            - img "全球 Web 图标" [ref=e110]
+            - generic [ref=e111]:
+              - generic [ref=e112]: wiktionary.org
+              - generic [ref=e115]: https://zh.wiktionary.org › wiki
+          - heading "好 - 维基词典，自由的多语言词典" [level=2] [ref=e116]:
+            - link "好 - 维基词典，自由的多语言词典" [ref=e117] [cursor=pointer]:
+              - /url: https://www.bing.com/ck/a?!&&p=fb62e781773bb45301d59813663bd9908dc064356387569ef9f6466b30874315JmltdHM9MTc3NDQ4MzIwMA&ptn=3&ver=2&hsh=4&fclid=38296057-1e68-6a0c-198c-777f1fc66bc5&u=a1aHR0cHM6Ly96aC53aWt0aW9uYXJ5Lm9yZy93aWtpLyVFNSVBNSVCRA&ntb=1
+              - strong [ref=e118]: 好
+              - text: "- 维基词典，自由的多语言词典"
+          - paragraph [ref=e120]: 與「嫌」、「惡」相對。 （ㄏㄠˇ，hǎo） 優良。 與「壞」相對。 （ㄏㄠˇ，hǎo）【形容詞】【副詞】比較性質表示「很」、「滿」。 例：景觀好漂亮！ 顏色好黑。 （ㄏㄠˋ，hào）【形容詞】【副詞】 喜 …
+        - listitem [ref=e121]:
+          - link "hanyuguoxue.com" [ref=e123] [cursor=pointer]:
+            - /url: https://www.bing.com/ck/a?!&&p=c20ca6498e97cb0dfd753287618ac473ec18a041353cdd615cae221441cd74abJmltdHM9MTc3NDQ4MzIwMA&ptn=3&ver=2&hsh=4&fclid=38296057-1e68-6a0c-198c-777f1fc66bc5&u=a1aHR0cHM6Ly93d3cuaGFueXVndW94dWUuY29tL3ppZGlhbi96aS0yMjkwOQ&ntb=1
+            - img "全球 Web 图标" [ref=e127]
+            - generic [ref=e128]:
+              - generic [ref=e129]: hanyuguoxue.com
+              - generic [ref=e132]: https://www.hanyuguoxue.com › zidian
+          - heading "好的意思,好的解释,好的拼音,好的部首,好的笔顺-汉语国学" [level=2] [ref=e133]:
+            - link "好的意思,好的解释,好的拼音,好的部首,好的笔顺-汉语国学" [ref=e134] [cursor=pointer]:
+              - /url: https://www.bing.com/ck/a?!&&p=c20ca6498e97cb0dfd753287618ac473ec18a041353cdd615cae221441cd74abJmltdHM9MTc3NDQ4MzIwMA&ptn=3&ver=2&hsh=4&fclid=38296057-1e68-6a0c-198c-777f1fc66bc5&u=a1aHR0cHM6Ly93d3cuaGFueXVndW94dWUuY29tL3ppZGlhbi96aS0yMjkwOQ&ntb=1
+              - strong [ref=e135]: 好
+              - text: 的意思,
+              - strong [ref=e136]: 好
+              - text: 的解释,
+              - strong [ref=e137]: 好
+              - text: 的拼音,
+              - strong [ref=e138]: 好
+              - text: 的部首,
+              - strong [ref=e139]: 好
+              - text: 的笔顺-汉语国学
+          - paragraph [ref=e141]: 好是多音字，拼音是hǎo、hào，好字共6画，部首是女部，本页介绍好字的意思，好的详细解释，好的读音、笔顺，还包括好的翻译、输入法、异体字、造字法、结构、五行、电码等。
+        - listitem [ref=e142]:
+          - link "hancibao.com" [ref=e144] [cursor=pointer]:
+            - /url: https://www.bing.com/ck/a?!&&p=3a7ee13f41a1009ec172924bbd1db4b5b6771264dc6b0d97c23e17e06736c448JmltdHM9MTc3NDQ4MzIwMA&ptn=3&ver=2&hsh=4&fclid=38296057-1e68-6a0c-198c-777f1fc66bc5&u=a1aHR0cHM6Ly93d3cuaGFuY2liYW8uY29tL3ppLzU5N2Q&ntb=1
+            - img "全球 Web 图标" [ref=e148]
+            - generic [ref=e149]:
+              - generic [ref=e150]: hancibao.com
+              - generic [ref=e153]: https://www.hancibao.com › zi
+          - heading "好_好字的拼音,意思,字典释义 - 《新华字典》 - 汉辞宝" [level=2] [ref=e154]:
+            - link "好_好字的拼音,意思,字典释义 - 《新华字典》 - 汉辞宝" [ref=e155] [cursor=pointer]:
+              - /url: https://www.bing.com/ck/a?!&&p=3a7ee13f41a1009ec172924bbd1db4b5b6771264dc6b0d97c23e17e06736c448JmltdHM9MTc3NDQ4MzIwMA&ptn=3&ver=2&hsh=4&fclid=38296057-1e68-6a0c-198c-777f1fc66bc5&u=a1aHR0cHM6Ly93d3cuaGFuY2liYW8uY29tL3ppLzU5N2Q&ntb=1
+              - strong [ref=e156]: 好
+              - text: _
+              - strong [ref=e157]: 好
+              - text: 字的拼音,意思,字典释义 - 《新华字典》 - 汉辞宝
+          - paragraph [ref=e159]: 【好】字本义为美，貌美。 【好】字造字法为会意。 从女，从子。 【好】字五行属水, 字形结构为左右, 可拆字为“女 子”。 【好】字是多音字，拼音有hǎo,hào, 部首为女, 笔画为6画, 笔顺为“フノ一フ丨一”。
+        - listitem [ref=e160]:
+          - link "chagushici.com" [ref=e162] [cursor=pointer]:
+            - /url: https://www.bing.com/ck/a?!&&p=19fa11154853756c23cd0ecbbf0a330cc517004b91fc43283d98f18dd87e7787JmltdHM9MTc3NDQ4MzIwMA&ptn=3&ver=2&hsh=4&fclid=38296057-1e68-6a0c-198c-777f1fc66bc5&u=a1aHR0cHM6Ly93d3cuY2hhZ3VzaGljaS5jb20vemlkaWFuLyVFNSVBNSVCRA&ntb=1
+            - img "全球 Web 图标" [ref=e166]
+            - generic [ref=e167]:
+              - generic [ref=e168]: chagushici.com
+              - generic [ref=e171]: https://www.chagushici.com › zidian
+          - heading "好_好怎么读_好的意思 - 汉语字典 - chagushici.com" [level=2] [ref=e172]:
+            - link "好_好怎么读_好的意思 - 汉语字典 - chagushici.com" [ref=e173] [cursor=pointer]:
+              - /url: https://www.bing.com/ck/a?!&&p=19fa11154853756c23cd0ecbbf0a330cc517004b91fc43283d98f18dd87e7787JmltdHM9MTc3NDQ4MzIwMA&ptn=3&ver=2&hsh=4&fclid=38296057-1e68-6a0c-198c-777f1fc66bc5&u=a1aHR0cHM6Ly93d3cuY2hhZ3VzaGljaS5jb20vemlkaWFuLyVFNSVBNSVCRA&ntb=1
+              - strong [ref=e174]: 好
+              - text: _
+              - strong [ref=e175]: 好
+              - text: 怎么读_
+              - strong [ref=e176]: 好
+              - text: 的意思 - 汉语字典 - chagushici.com
+          - paragraph [ref=e178]: 好字的意思 [hǎo] 1.优点多的；使人满意的（跟“坏”相对）：好人。 好东西。 好事情。 好脾气。 庄稼长得很好。 2.合宜；妥当：初次见面，不知跟他说些什么好。 3.用在动词前，表示使人满意的性质在哪 …
+        - listitem [ref=e179]:
+          - link "moe.edu.tw" [ref=e181] [cursor=pointer]:
+            - /url: https://www.bing.com/ck/a?!&&p=03bf117ad0aea8f5c4edb9e73b06b6f89336686da886c78d0a3728b5c81a1712JmltdHM9MTc3NDQ4MzIwMA&ptn=3&ver=2&hsh=4&fclid=38296057-1e68-6a0c-198c-777f1fc66bc5&u=a1aHR0cHM6Ly9kaWN0LnJldmlzZWQubW9lLmVkdS50dy9kaWN0Vmlldy5qc3A_SUQ9NDgxMiZsYT0wJnBvd2VyTW9kZT0w&ntb=1
+            - img "全球 Web 图标" [ref=e185]
+            - generic [ref=e186]:
+              - generic [ref=e187]: moe.edu.tw
+              - generic [ref=e190]: https://dict.revised.moe.edu.tw › dictView.jsp
+          - 'heading "< 好 : ㄏㄠˇ >辭典檢視 - 教育部《重編國語辭典修訂本》2021" [level=2] [ref=e191]':
+            - 'link "< 好 : ㄏㄠˇ >辭典檢視 - 教育部《重編國語辭典修訂本》2021" [ref=e192] [cursor=pointer]':
+              - /url: https://www.bing.com/ck/a?!&&p=03bf117ad0aea8f5c4edb9e73b06b6f89336686da886c78d0a3728b5c81a1712JmltdHM9MTc3NDQ4MzIwMA&ptn=3&ver=2&hsh=4&fclid=38296057-1e68-6a0c-198c-777f1fc66bc5&u=a1aHR0cHM6Ly9kaWN0LnJldmlzZWQubW9lLmVkdS50dy9kaWN0Vmlldy5qc3A_SUQ9NDgxMiZsYT0wJnBvd2VyTW9kZT0w&ntb=1
+              - text: <
+              - strong [ref=e193]: 好
+              - text: ": ㄏㄠˇ >辭典檢視 - 教育部《重編國語辭典修訂本》2021"
+          - paragraph [ref=e195]: "字詞:好,注音:ㄏㄠˇ,女部+3畫 共6畫 (常用字),釋義: [形] 1.美、善，理想的。 如：「好東西」、「好風景」、「花好月圓」、「好人好事」。 唐．韋莊〈菩薩蠻．人人盡說江南好〉詞：「人人盡說江南好， …"
+        - listitem [ref=e196]:
+          - link "zidianwang.cn" [ref=e198] [cursor=pointer]:
+            - /url: https://www.bing.com/ck/a?!&&p=46d364e5daa6f7384782546db960f682b2bde1aa52a7f60955018ed32729f24cJmltdHM9MTc3NDQ4MzIwMA&ptn=3&ver=2&hsh=4&fclid=38296057-1e68-6a0c-198c-777f1fc66bc5&u=a1aHR0cHM6Ly93d3cuemlkaWFud2FuZy5jbi96aWRpYW4vNTk3RC5odG1s&ntb=1
+            - img "全球 Web 图标" [ref=e202]
+            - generic [ref=e203]:
+              - generic [ref=e204]: zidianwang.cn
+              - generic [ref=e207]: https://www.zidianwang.cn › zidian
+          - heading "好是什么意思|好的拼音|好怎么读_汉语字典 - 新华字典" [level=2] [ref=e208]:
+            - link "好是什么意思|好的拼音|好怎么读_汉语字典 - 新华字典" [ref=e209] [cursor=pointer]:
+              - /url: https://www.bing.com/ck/a?!&&p=46d364e5daa6f7384782546db960f682b2bde1aa52a7f60955018ed32729f24cJmltdHM9MTc3NDQ4MzIwMA&ptn=3&ver=2&hsh=4&fclid=38296057-1e68-6a0c-198c-777f1fc66bc5&u=a1aHR0cHM6Ly93d3cuemlkaWFud2FuZy5jbi96aWRpYW4vNTk3RC5odG1s&ntb=1
+              - strong [ref=e210]: 好
+              - text: 是什么意思|
+              - strong [ref=e211]: 好
+              - text: 的拼音|
+              - strong [ref=e212]: 好
+              - text: 怎么读_汉语字典 - 新华字典
+          - paragraph [ref=e214]: 好怎么读、好是什么意思、好的拼音、在汉语字典中的解释。 优点多或使人满意的，与坏相对：～人。 ～汉。 ～歹。 ～事多磨。 身体康健，疾病消失，生活幸福：您～。 安～。 友爱，和睦：友～。 …
+        - listitem [ref=e215]:
+          - link "bmcx.com" [ref=e217] [cursor=pointer]:
+            - /url: https://www.bing.com/ck/a?!&&p=8a9f92912caf489a9da2e65809e424463570bccd2fe28156192c276ab4bd9abbJmltdHM9MTc3NDQ4MzIwMA&ptn=3&ver=2&hsh=4&fclid=38296057-1e68-6a0c-198c-777f1fc66bc5&u=a1aHR0cHM6Ly96aWRpYW4uYm1jeC5jb20vZTVhNWJkX196aWRpYW5jaGF4dW4v&ntb=1
+            - img "全球 Web 图标" [ref=e221]
+            - generic [ref=e222]:
+              - generic [ref=e223]: bmcx.com
+              - generic [ref=e226]: https://zidian.bmcx.com
+          - heading "“好”字的解释 - 好字的拼音 - 部首 - bmcx.com" [level=2] [ref=e227]:
+            - link "“好”字的解释 - 好字的拼音 - 部首 - bmcx.com" [ref=e228] [cursor=pointer]:
+              - /url: https://www.bing.com/ck/a?!&&p=8a9f92912caf489a9da2e65809e424463570bccd2fe28156192c276ab4bd9abbJmltdHM9MTc3NDQ4MzIwMA&ptn=3&ver=2&hsh=4&fclid=38296057-1e68-6a0c-198c-777f1fc66bc5&u=a1aHR0cHM6Ly96aWRpYW4uYm1jeC5jb20vZTVhNWJkX196aWRpYW5jaGF4dW4v&ntb=1
+              - text: “
+              - strong [ref=e229]: 好
+              - text: ”字的解释 -
+              - strong [ref=e230]: 好
+              - text: 字的拼音 - 部首 - bmcx.com
+          - paragraph [ref=e232]: 好 hǎo ㄏㄠˇ 优点多或使人满意的，与“ 坏 ”相对：～人。 ～汉。 ～歹。 ～事多磨。 身体康健，疾病消失，生活幸福：您～。 安～。 友爱，和睦：友～。 相～。 容易：～办。 ～使。 ～懂。 完成，完善： …
+        - listitem [ref=e233]:
+          - link "chinesewords.org" [ref=e235] [cursor=pointer]:
+            - /url: https://www.bing.com/ck/a?!&&p=822c1e5eb6d616e54b8cbec0ea219ef746cb0213f86036c5e7e1db98c43dd7a5JmltdHM9MTc3NDQ4MzIwMA&ptn=3&ver=2&hsh=4&fclid=38296057-1e68-6a0c-198c-777f1fc66bc5&u=a1aHR0cHM6Ly93d3cuY2hpbmVzZXdvcmRzLm9yZy9jaGFyYWN0ZXIvJUU1JUE1JUJELmh0bWw&ntb=1
+            - img "全球 Web 图标" [ref=e239]
+            - generic [ref=e240]:
+              - generic [ref=e241]: chinesewords.org
+              - generic [ref=e244]: https://www.chinesewords.org › character › 好.html
+          - heading "好的意思，好字的意思 - 漢語字典" [level=2] [ref=e245]:
+            - link "好的意思，好字的意思 - 漢語字典" [ref=e246] [cursor=pointer]:
+              - /url: https://www.bing.com/ck/a?!&&p=822c1e5eb6d616e54b8cbec0ea219ef746cb0213f86036c5e7e1db98c43dd7a5JmltdHM9MTc3NDQ4MzIwMA&ptn=3&ver=2&hsh=4&fclid=38296057-1e68-6a0c-198c-777f1fc66bc5&u=a1aHR0cHM6Ly93d3cuY2hpbmVzZXdvcmRzLm9yZy9jaGFyYWN0ZXIvJUU1JUE1JUJELmh0bWw&ntb=1
+              - strong [ref=e247]: 好
+              - text: 的意思，
+              - strong [ref=e248]: 好
+              - text: 字的意思 - 漢語字典
+          - paragraph [ref=e250]: 漢語字典提供詳細的關於好的意思和好字的解釋，主要包括好字的基本釋義，詳細釋義，好字五行，好字筆劃，好字部首，好字同音字，好字筆順，好字注首等詳細關於好的意思說明。
+        - listitem [ref=e251]:
+          - navigation "好博 官网 的更多搜索结果":
+            - list:
+              - listitem [ref=e252]:
+                - generic "第 1 页" [ref=e253]: "1"
+              - listitem [ref=e254]:
+                - link "第 2 页" [ref=e255] [cursor=pointer]:
+                  - /url: /search?q=%e5%a5%bd%e5%8d%9a+%e5%ae%98%e7%bd%91&rdr=1&rdrig=825AE6C380044ED396BA5EC67F743361&FPIG=3E70E13213D94DBCB03D32235A3CBF50&first=11&FORM=PERE
+                  - text: "2"
+              - listitem [ref=e256]:
+                - link "第 3 页" [ref=e257] [cursor=pointer]:
+                  - /url: /search?q=%e5%a5%bd%e5%8d%9a+%e5%ae%98%e7%bd%91&rdr=1&rdrig=825AE6C380044ED396BA5EC67F743361&FPIG=3E70E13213D94DBCB03D32235A3CBF50&first=21&FORM=PERE1
+                  - text: "3"
+              - listitem [ref=e258]:
+                - link "下一页" [ref=e259] [cursor=pointer]:
+                  - /url: /search?q=%e5%a5%bd%e5%8d%9a+%e5%ae%98%e7%bd%91&rdr=1&rdrig=825AE6C380044ED396BA5EC67F743361&FPIG=3E70E13213D94DBCB03D32235A3CBF50&first=11&FORM=PORE
+    - complementary "更多结果" [ref=e260]:
+      - list
+    - complementary "浏览更多"
+  - contentinfo "页脚" [ref=e261]:
+    - generic [ref=e262]:
+      - list:
+        - listitem [ref=e263]:
+          - link "隐私" [ref=e264] [cursor=pointer]:
+            - /url: https://www.bing.com/ck/a?!&&p=d0e9fbc0e624582eff0dfaf105f2b3e1b8b7f970d5c672ad2ca4cf083793b9b0JmltdHM9MTc3NDQ4MzIwMA&ptn=3&ver=2&hsh=4&fclid=38296057-1e68-6a0c-198c-777f1fc66bc5&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSWQ9NTIxODM5&ntb=1
+        - listitem [ref=e265]:
+          - link "条款" [ref=e266] [cursor=pointer]:
+            - /url: https://www.bing.com/ck/a?!&&p=de8f0aa02b68f08d1e1d35c25a08e112a8b54166f66f7ac1a9fec2f42462ff17JmltdHM9MTc3NDQ4MzIwMA&ptn=3&ver=2&hsh=4&fclid=38296057-1e68-6a0c-198c-777f1fc66bc5&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSUQ9MjQ2MzM4&ntb=1
+  - generic [ref=e272]:
+    - search [ref=e273]:
+      - textbox "继续提问" [ref=e274]
+    - button "发送" [ref=e276] [cursor=pointer]:
+      - img [ref=e278]
+  - dialog "Quick Search"

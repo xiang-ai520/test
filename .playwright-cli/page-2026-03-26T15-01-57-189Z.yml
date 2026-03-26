@@ -1,0 +1,303 @@
+- generic [active] [ref=e1]:
+  - img
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - generic [ref=e8]: 欢迎来到好采云采购平台！
+          - generic [ref=e9]: 请登录 注册
+        - generic [ref=e10]:
+          - button "我的好采云采购平台 " [ref=e13] [cursor=pointer]:
+            - generic [ref=e14]:
+              - text: 我的好采云采购平台
+              - generic [ref=e15]: 
+          - generic [ref=e18] [cursor=pointer]: 在线客服
+          - generic [ref=e22] [cursor=pointer]: 手机好采云采购平台
+      - generic [ref=e24]:
+        - generic [ref=e25]:
+          - generic [ref=e26]:
+            - combobox [ref=e27]:
+              - textbox "执手" [ref=e112]
+            - button "搜索" [ref=e30] [cursor=pointer]
+            - button "快速下单" [ref=e31] [cursor=pointer]:
+              - generic [ref=e32]: 快速下单
+          - paragraph [ref=e113]: 内开内倒铰链锁座AH25MALAH20
+        - generic [ref=e34] [cursor=pointer]: 我的购物车
+      - text: 
+    - generic [ref=e35]:
+      - generic [ref=e37]:
+        - generic [ref=e39]: 全部商品分类
+        - list [ref=e40]:
+          - listitem [ref=e114] [cursor=pointer]: 首页
+          - listitem [ref=e115] [cursor=pointer]: 配置方案
+          - listitem [ref=e116] [cursor=pointer]: 整套五金
+          - listitem [ref=e117] [cursor=pointer]: 单品选购
+          - listitem [ref=e118] [cursor=pointer]
+          - listitem [ref=e119] [cursor=pointer]: 活动中心
+          - listitem [ref=e41] [cursor=pointer]:
+            - menubar [ref=e42]:
+              - menuitem "资料中心" [ref=e43]:
+                - generic [ref=e44]:
+                  - generic [ref=e45]: 资料中心
+                  - text: 
+      - generic [ref=e46]:
+        - generic [ref=e47]:
+          - list [ref=e120]:
+            - listitem [ref=e121] [cursor=pointer]:
+              - generic [ref=e122]: 外观执手
+              - generic [ref=e123]: 
+            - listitem [ref=e124] [cursor=pointer]:
+              - generic [ref=e125]: 窗纱一体方案
+              - generic [ref=e126]: 
+            - listitem [ref=e127] [cursor=pointer]:
+              - generic [ref=e128]: 内开内倒窗方案
+              - generic [ref=e129]: 
+            - listitem [ref=e130] [cursor=pointer]:
+              - generic [ref=e131]: 悬挂外开窗方案
+              - generic [ref=e132]: 
+            - listitem [ref=e133] [cursor=pointer]:
+              - generic [ref=e134]: 提升推拉门方案
+              - generic [ref=e135]: 
+            - listitem [ref=e136] [cursor=pointer]:
+              - generic [ref=e137]: 折叠门方案
+              - generic [ref=e138]: 
+            - listitem [ref=e139] [cursor=pointer]:
+              - generic [ref=e140]: 平开门方案
+              - generic [ref=e141]: 
+            - listitem [ref=e142] [cursor=pointer]:
+              - generic [ref=e143]: 推拉窗方案
+              - generic [ref=e144]: 
+            - listitem [ref=e145] [cursor=pointer]:
+              - generic [ref=e146]: 推拉门方案
+              - generic [ref=e147]: 
+            - listitem [ref=e148] [cursor=pointer]:
+              - generic [ref=e149]: 智慧家居
+              - generic [ref=e150]: 
+          - generic [ref=e50]:
+            - generic [ref=e51]:  
+            - list [ref=e158]:
+              - listitem [ref=e159] [cursor=pointer]:
+                - button [ref=e160]
+              - listitem [ref=e161] [cursor=pointer]:
+                - button [ref=e162]
+              - listitem [ref=e163] [cursor=pointer]:
+                - button [ref=e164]
+              - listitem [ref=e165] [cursor=pointer]:
+                - button [ref=e166]
+              - listitem [ref=e167] [cursor=pointer]:
+                - button [ref=e168]
+              - listitem [ref=e169] [cursor=pointer]:
+                - button [ref=e170]
+              - listitem [ref=e171] [cursor=pointer]:
+                - button [ref=e172]
+        - list [ref=e176]:
+          - listitem [ref=e177]:
+            - generic [ref=e179]:
+              - generic [ref=e180]: PH927执手-HOPO essential
+              - generic [ref=e181]: ￥企业用户可查价
+          - listitem [ref=e182]:
+            - generic [ref=e184]:
+              - generic [ref=e185]: PH928执手-HOPO essential
+              - generic [ref=e186]: ￥企业用户可查价
+          - listitem [ref=e187]:
+            - generic [ref=e189]:
+              - generic [ref=e190]: PH903执手 -HOPO
+              - generic [ref=e191]: ￥企业用户可查价
+          - listitem [ref=e192]:
+            - generic [ref=e194]:
+              - generic [ref=e195]: PH929执手-HOPO essential
+              - generic [ref=e196]: ￥企业用户可查价
+          - listitem [ref=e197]:
+            - generic [ref=e199]:
+              - generic [ref=e200]: PH947执手 -essential
+              - generic [ref=e201]: ￥企业用户可查价
+          - listitem [ref=e202]:
+            - generic [ref=e204]:
+              - generic [ref=e205]: PH904执手-HOPO
+              - generic [ref=e206]: ￥企业用户可查价
+          - listitem [ref=e207]:
+            - generic [ref=e209]:
+              - generic [ref=e210]: SV.PH918抑菌直柄执手-iHandle
+              - generic [ref=e211]: ￥企业用户可查价
+          - listitem [ref=e212]:
+            - generic [ref=e214]:
+              - generic [ref=e215]: PH922执手-HOPO
+              - generic [ref=e216]: ￥企业用户可查价
+          - listitem [ref=e217]:
+            - generic [ref=e219]:
+              - generic [ref=e220]: PH917执手（左右）-HOPO
+              - generic [ref=e221]: ￥企业用户可查价
+    - generic [ref=e223]:
+      - generic [ref=e224]:
+        - heading "新品推荐" [level=1] [ref=e226]
+        - list [ref=e230]:
+          - listitem [ref=e231]:
+            - generic [ref=e233]:
+              - generic [ref=e234]: ALP70.00.38HE5
+              - generic [ref=e235]: ALP70锁座-HOPO essential
+              - generic [ref=e236]: ￥企业用户可查价
+          - listitem [ref=e237]:
+            - generic [ref=e239]:
+              - generic [ref=e240]: ALP70.00.38H5
+              - generic [ref=e241]: ALP70不锈钢锁座-HOPO
+              - generic [ref=e242]: ￥企业用户可查价
+          - listitem [ref=e243]:
+            - generic [ref=e245]:
+              - generic [ref=e246]: ALR70.00.38HE4
+              - generic [ref=e247]: ALR70锁杆-HOPO essential
+              - generic [ref=e248]: ￥企业用户可查价
+          - listitem [ref=e249]:
+            - generic [ref=e251]:
+              - generic [ref=e252]: AGC45.**.**HE5
+              - generic [ref=e253]: AGC45传动壳-HOPO essential
+              - generic [ref=e254]: ￥企业用户可查价
+          - listitem [ref=e255]:
+            - generic [ref=e257]:
+              - generic [ref=e258]: AGC45.**.384H5
+              - generic [ref=e259]: AGC45不锈钢传动壳（赛博系列）-HOPO
+              - generic [ref=e260]: ￥企业用户可查价
+        - heading "精选商品" [level=1] [ref=e262]
+        - list [ref=e266]:
+          - listitem [ref=e267]:
+            - generic [ref=e269]:
+              - generic [ref=e270]: ALP70.00.38HE5
+              - generic [ref=e271]: ALP70锁座-HOPO essential
+              - generic [ref=e272]: ￥企业用户可查价
+          - listitem [ref=e273]:
+            - generic [ref=e275]:
+              - generic [ref=e276]: ALP70.00.38H5
+              - generic [ref=e277]: ALP70不锈钢锁座-HOPO
+              - generic [ref=e278]: ￥企业用户可查价
+          - listitem [ref=e279]:
+            - generic [ref=e281]:
+              - generic [ref=e282]: AGC45.**.**HE5
+              - generic [ref=e283]: AGC45传动壳-HOPO essential
+              - generic [ref=e284]: ￥企业用户可查价
+          - listitem [ref=e285]:
+            - generic [ref=e287]:
+              - generic [ref=e288]: AGC45.**.384H5
+              - generic [ref=e289]: AGC45不锈钢传动壳（赛博系列）-HOPO
+              - generic [ref=e290]: ￥企业用户可查价
+          - listitem [ref=e291]:
+            - generic [ref=e293]:
+              - generic [ref=e294]: AGC45.27.1T384H5
+              - generic [ref=e295]: AGC45-27不锈钢传动壳-HOPO
+              - generic [ref=e296]: ￥企业用户可查价
+      - generic [ref=e297]:
+        - heading "平开类" [level=1] [ref=e299]
+        - generic [ref=e300]:
+          - generic [ref=e302]:
+            - generic [ref=e303]:
+              - generic [ref=e304]: 外观五金
+              - generic [ref=e305]:
+                - generic [ref=e306] [cursor=pointer]: 拨叉执手
+                - generic [ref=e307] [cursor=pointer]: 门执手
+                - generic [ref=e308] [cursor=pointer]: 方轴执手
+            - generic:
+              - list
+          - generic [ref=e310]:
+            - generic [ref=e311]:
+              - generic [ref=e312]: 内藏功能件
+              - generic [ref=e313]:
+                - generic [ref=e314] [cursor=pointer]: 传动壳
+                - generic [ref=e315] [cursor=pointer]: 承重五金
+                - generic [ref=e316] [cursor=pointer]: 锁杆锁座
+            - generic:
+              - list
+      - generic [ref=e317]:
+        - heading "推拉类" [level=1] [ref=e319]
+        - generic [ref=e320]:
+          - generic [ref=e322]:
+            - generic [ref=e323]:
+              - generic [ref=e324]: 外观五金
+              - generic [ref=e325]:
+                - generic [ref=e326] [cursor=pointer]: 拉手
+                - generic [ref=e327] [cursor=pointer]: MA锁
+                - generic [ref=e328] [cursor=pointer]: 锁芯/盖
+            - generic:
+              - list
+          - generic [ref=e330]:
+            - generic [ref=e331]:
+              - generic [ref=e332]: 内藏功能件
+              - generic [ref=e333]:
+                - generic [ref=e334] [cursor=pointer]: 滑轮
+                - generic [ref=e335] [cursor=pointer]: 传动杆
+                - generic [ref=e336] [cursor=pointer]: 锁点套件
+            - generic:
+              - list
+      - generic [ref=e337]:
+        - heading "整套五金" [level=1] [ref=e339]
+        - generic [ref=e340]:
+          - generic [ref=e342]:
+            - generic [ref=e343]:
+              - generic [ref=e344]: 内倒&悬挂
+              - generic [ref=e345]:
+                - generic [ref=e346] [cursor=pointer]: 隐藏式内倒
+                - generic [ref=e347] [cursor=pointer]: 合页式内倒
+                - generic [ref=e348] [cursor=pointer]: 悬挂外开
+            - generic:
+              - list
+          - generic [ref=e350]:
+            - generic [ref=e351]:
+              - generic [ref=e352]: 其他
+              - generic [ref=e353]:
+                - generic [ref=e354] [cursor=pointer]: 提升推拉
+                - generic [ref=e355] [cursor=pointer]: 单双钩锁体
+                - generic [ref=e356] [cursor=pointer]: 电动开窗
+            - generic:
+              - list
+    - generic [ref=e52]:
+      - list [ref=e54]:
+        - listitem [ref=e55]:
+          - generic [ref=e56]:
+            - generic [ref=e57]: 品类齐全
+            - generic [ref=e58]: 省心省力 一站式购齐
+        - listitem [ref=e59]:
+          - generic [ref=e60]:
+            - generic [ref=e61]: 货期保障
+            - generic [ref=e62]: 多仓直发 货期无忧
+        - listitem [ref=e63]:
+          - generic [ref=e64]:
+            - generic [ref=e65]: 正品货源
+            - generic [ref=e66]: 正品保障 诚信服务
+        - listitem [ref=e67]:
+          - generic [ref=e68]:
+            - generic [ref=e69]: 一对一客服
+            - generic [ref=e70]: 选型询价 快速响应
+      - generic [ref=e72]:
+        - generic [ref=e73]:
+          - generic [ref=e75]:
+            - generic [ref=e76]:
+              - paragraph [ref=e77]: 400服务热线：
+              - paragraph [ref=e78]: 400-788-0000
+            - paragraph [ref=e79]: 周一至周六 9:00-18:00
+            - paragraph [ref=e80] [cursor=pointer]: 在线咨询
+          - generic [ref=e81]:
+            - paragraph [ref=e83]: 小程序
+            - paragraph [ref=e85]: 微信公众号
+        - list [ref=e86]:
+          - listitem [ref=e87]
+          - listitem [ref=e88]
+          - listitem [ref=e89]
+          - listitem [ref=e90]
+          - listitem [ref=e91]
+          - listitem [ref=e92]
+          - listitem [ref=e93]
+          - listitem [ref=e94]
+        - generic [ref=e95]:
+          - paragraph [ref=e96]:
+            - generic [ref=e97]: 好采云采购铝合金门窗五金采购平台
+            - link "HOPO好博窗控" [ref=e99] [cursor=pointer]:
+              - /url: http://www.hopo.com.cn
+          - generic [ref=e100]:
+            - text: CopyRight © 2015-2026版权所有 好采云采购铝合金门窗五金采购平台
+            - link "www.boass.com" [ref=e101] [cursor=pointer]:
+              - /url: https://www.boass.com
+            - link "粤ICP备18058731号-2" [ref=e102] [cursor=pointer]:
+              - /url: https://beian.miit.gov.cn
+    - generic [ref=e103]:
+      - generic [ref=e105] [cursor=pointer]: 返回顶部
+      - generic [ref=e107] [cursor=pointer]: 下单指南
+      - generic [ref=e109] [cursor=pointer]: 在线客服
+      - generic [ref=e111] [cursor=pointer]: 意见反馈
+    - text: 
