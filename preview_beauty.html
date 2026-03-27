@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beauty Preview</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg1: #f4d2c4;
+      --bg2: #e8a8a1;
+      --frame: rgba(255, 255, 255, 0.72);
+      --shadow: rgba(89, 42, 39, 0.22);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.65), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(255,240,232,0.7), transparent 28%),
+        linear-gradient(135deg, var(--bg1), var(--bg2));
+      font-family: "Segoe UI", sans-serif;
+    }
+    .frame {
+      width: min(92vw, 820px);
+      padding: 26px;
+      border-radius: 28px;
+      background: var(--frame);
+      box-shadow: 0 30px 60px var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <img src="./beauty_portrait.svg" alt="美女插画预览" />
+  </div>
+</body>
+</html>

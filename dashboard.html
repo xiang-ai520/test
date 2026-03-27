@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Command Dashboard</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2376e7ff'/%3E%3Cstop offset='1' stop-color='%237b8cff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='18' fill='%23071320'/%3E%3Crect x='10' y='10' width='44' height='44' rx='14' fill='url(%23g)'/%3E%3Cpath d='M18 37.5 35.5 20H45L27.5 37.5H18Z' fill='%2306111d' fill-opacity='.82'/%3E%3Ccircle cx='41' cy='23' r='6' fill='%2306111d' fill-opacity='.82'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: rgba(10, 21, 39, 0.78);
+      --panel: rgba(14, 27, 47, 0.6);
+      --line: rgba(150, 197, 255, 0.14);
+      --text: #f4f7fb;
+      --muted: #8da3bf;
+      --accent: #76e7ff;
+      --accent-2: #7b8cff;
+      --accent-3: #9cffbc;
+      --warning: #ffcc73;
+      --danger: #ff7895;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(118, 231, 255, 0.16), transparent 28%),
+        radial-gradient(circle at 85% 12%, rgba(123, 140, 255, 0.2), transparent 26%),
+        radial-gradient(circle at 50% 120%, rgba(156, 255, 188, 0.12), transparent 30%),
+        linear-gradient(145deg, #040b14 0%, #081321 50%, #05101d 100%);
+      color: var(--text);
+      font-family: "IBM Plex Sans", sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    body::before {
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: radial-gradient(circle at center, black 28%, transparent 88%);
+      opacity: 0.26;
+    }
+
+    body::after {
+      background: linear-gradient(180deg, rgba(118, 231, 255, 0.06), transparent 16%, transparent 84%, rgba(123, 140, 255, 0.08));
+      opacity: 0.8;
+    }
+
+    .shell {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 88px minmax(0, 1.7fr) minmax(320px, 0.9fr);
+      gap: 22px;
+      padding: 26px;
+    }
+
+    .rail,
+    .main,
+    .side {
+      position: relative;
+      z-index: 1;
+    }
+
+    .rail {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 18px 0;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(8, 20, 37, 0.92), rgba(7, 15, 28, 0.58));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      animation: rise 0.9s ease-out;
+    }
+
+    .brand {
+      display: grid;
+      place-items: center;
+      gap: 14px;
+    }
+
+    .brand-mark {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background:
+        linear-gradient(145deg, rgba(118, 231, 255, 0.95), rgba(123, 140, 255, 0.9));
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.35),
+        0 14px 30px rgba(118, 231, 255, 0.28);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-mark::before,
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      background: rgba(5, 13, 24, 0.64);
+    }
+
+    .brand-mark::before {
+      width: 44px;
+      height: 10px;
+      left: 4px;
+      top: 22px;
+      transform: rotate(-38deg);
+    }
+
+    .brand-mark::after {
+      width: 16px;
+      height: 16px;
+      right: 9px;
+      top: 10px;
+    }
+
+    .rail-nav,
+    .rail-meta {
+      display: grid;
+      gap: 14px;
+      justify-items: center;
+    }
+
+    .nav-btn,
+    .meta-pill {
+      width: 50px;
+      height: 50px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      border: 1px solid transparent;
+      color: var(--muted);
+      background: transparent;
+      transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
+    }
+
+    .nav-btn:hover,
+    .meta-pill:hover,
+    .nav-btn.active {
+      color: var(--text);
+      border-color: rgba(118, 231, 255, 0.28);
+      background: linear-gradient(180deg, rgba(118, 231, 255, 0.14), rgba(123, 140, 255, 0.1));
+      transform: translateY(-2px);
+    }
+
+    .main {
+      display: grid;
+      grid-template-rows: auto auto 1fr;
+      gap: 22px;
+      animation: rise 1s ease-out 0.08s backwards;
+    }
+
+    .topbar,
+    .hero,
+    .matrix,
+    .side-panel {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(11, 24, 42, 0.88), rgba(7, 16, 30, 0.66));
+      backdrop-filter: blur(20px);
+      box-shadow: var(--shadow);
+    }
+
+    .topbar {
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 12px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .headline {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(28px, 3vw, 42px);
+      line-height: 1;
+      margin: 0;
+      letter-spacing: -0.04em;
+    }
+
+    .subcopy {
+      margin: 6px 0 0;
+      color: var(--muted);
+      max-width: 560px;
+      font-size: 14px;
+    }
+
+    .top-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .status-chip,
+    .ghost-btn {
+      border-radius: 999px;
+      padding: 11px 16px;
+      font-size: 13px;
+      border: 1px solid rgba(118, 231, 255, 0.22);
+      background: rgba(118, 231, 255, 0.08);
+      color: var(--text);
+    }
+
+    .ghost-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero {
+      border-radius: 34px;
+      padding: 26px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(118, 231, 255, 0.18), transparent 22%),
+        radial-gradient(circle at 84% 18%, rgba(123, 140, 255, 0.24), transparent 24%),
+        linear-gradient(120deg, rgba(255, 255, 255, 0.06), transparent 40%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .signal {
+      display: grid;
+      grid-template-rows: auto auto 1fr;
+      gap: 20px;
+    }
+
+    .signal-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .micro-pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--muted);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .metric-rack {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .metric {
+      padding: 16px 0 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .metric-value {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(26px, 3vw, 44px);
+      letter-spacing: -0.05em;
+      margin-bottom: 8px;
+    }
+
+    .metric-trend {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--accent-3);
+    }
+
+    .metric-trend.down {
+      color: var(--danger);
+    }
+
+    .ring-stage {
+      position: relative;
+      border-left: 1px solid rgba(255, 255, 255, 0.08);
+      padding-left: 18px;
+      display: grid;
+      align-content: space-between;
+      min-height: 100%;
+    }
+
+    .ring-wrap {
+      place-self: center;
+      width: min(100%, 360px);
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+
+    .ring-wrap::before {
+      content: "";
+      position: absolute;
+      inset: 10%;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(118, 231, 255, 0.18), transparent 36%),
+        radial-gradient(circle at 68% 70%, rgba(123, 140, 255, 0.22), transparent 30%);
+      filter: blur(6px);
+    }
+
+    .ring-svg {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-90deg);
+      filter: drop-shadow(0 0 20px rgba(118, 231, 255, 0.18));
+    }
+
+    .ring-label {
+      position: absolute;
+      text-align: center;
+      display: grid;
+      gap: 6px;
+    }
+
+    .ring-label strong {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 56px;
+      letter-spacing: -0.06em;
+    }
+
+    .ring-label span {
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .ring-footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .matrix {
+      border-radius: 34px;
+      padding: 22px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+      gap: 18px;
+    }
+
+    .chart-panel {
+      display: grid;
+      gap: 18px;
+      min-width: 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 14px;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .section-note {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .legend {
+      display: flex;
+      gap: 14px;
+      color: var(--muted);
+      font-size: 12px;
+      flex-wrap: wrap;
+    }
+
+    .legend span::before {
+      content: "";
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 8px;
+      vertical-align: -1px;
+    }
+
+    .legend .l1::before { background: var(--accent); }
+    .legend .l2::before { background: var(--accent-2); }
+    .legend .l3::before { background: var(--accent-3); }
+
+    .chart-shell {
+      position: relative;
+      min-height: 320px;
+      border-radius: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      background:
+        linear-gradient(180deg, rgba(118, 231, 255, 0.04), transparent 32%),
+        rgba(255, 255, 255, 0.02);
+      padding: 22px 18px 18px;
+      overflow: hidden;
+    }
+
+    .chart-grid {
+      position: absolute;
+      inset: 18px;
+      display: grid;
+      grid-template-rows: repeat(5, 1fr);
+      pointer-events: none;
+    }
+
+    .chart-grid span {
+      border-top: 1px dashed rgba(255, 255, 255, 0.08);
+    }
+
+    .chart-svg {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .bars {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+      align-items: end;
+      height: 112px;
+    }
+
+    .bar {
+      border-radius: 14px 14px 4px 4px;
+      background: linear-gradient(180deg, rgba(123, 140, 255, 0.9), rgba(123, 140, 255, 0.14));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bar::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.34), transparent 35%);
+      opacity: 0.4;
+    }
+
+    .bar-labels {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 10px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .stack {
+      display: grid;
+      gap: 16px;
+      min-width: 0;
+    }
+
+    .list-block {
+      border-radius: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(255, 255, 255, 0.02);
+      padding: 18px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .list-item {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .list-item:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 16px rgba(118, 231, 255, 0.65);
+    }
+
+    .dot.warn { background: var(--warning); box-shadow: 0 0 16px rgba(255, 204, 115, 0.55); }
+    .dot.risk { background: var(--danger); box-shadow: 0 0 16px rgba(255, 120, 149, 0.55); }
+
+    .list-item strong,
+    .mini-title {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .list-item p,
+    .mini-copy {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .list-item time,
+    .score {
+      color: var(--text);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 14px;
+    }
+
+    .side {
+      display: grid;
+      grid-template-rows: auto auto 1fr;
+      gap: 22px;
+      animation: rise 1s ease-out 0.18s backwards;
+    }
+
+    .side-panel {
+      border-radius: 34px;
+      padding: 22px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .beam {
+      min-height: 220px;
+      border-radius: 28px;
+      overflow: hidden;
+      position: relative;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(118, 231, 255, 0.14), transparent 34%),
+        radial-gradient(circle at 50% 50%, rgba(123, 140, 255, 0.22), transparent 54%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent);
+    }
+
+    .beam::before,
+    .beam::after {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .beam::after {
+      inset: 36px;
+      border-radius: 50%;
+      border-color: rgba(118, 231, 255, 0.2);
+      animation: pulse 4.4s ease-in-out infinite;
+    }
+
+    .beam-sweep {
+      position: absolute;
+      inset: 10%;
+      border-radius: 50%;
+      background: conic-gradient(from 180deg, transparent 0deg, rgba(118, 231, 255, 0.28) 42deg, transparent 82deg);
+      filter: blur(3px);
+      animation: spin 8s linear infinite;
+    }
+
+    .beam-core {
+      position: absolute;
+      inset: 26%;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle, rgba(118, 231, 255, 0.2), rgba(6, 16, 28, 0.9) 68%);
+      border: 1px solid rgba(118, 231, 255, 0.22);
+      box-shadow: inset 0 0 30px rgba(118, 231, 255, 0.08);
+    }
+
+    .beam-core strong {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 36px;
+      letter-spacing: -0.05em;
+    }
+
+    .beam-core span {
+      display: block;
+      margin-top: 4px;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .kpi-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .kpi {
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .kpi strong {
+      display: block;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    .kpi span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .track {
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .track::before {
+      content: "";
+      position: absolute;
+      left: 3px;
+      top: 8px;
+      bottom: -8px;
+      width: 1px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .track:last-child::before {
+      bottom: 8px;
+    }
+
+    .track h4 {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .track p {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .track .point {
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 16px rgba(118, 231, 255, 0.5);
+    }
+
+    .footer-note {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .live {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text);
+    }
+
+    .live::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-3);
+      box-shadow: 0 0 14px rgba(156, 255, 188, 0.7);
+      animation: blink 1.7s ease infinite;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(0.92); opacity: 0.45; }
+      50% { transform: scale(1.02); opacity: 0.85; }
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.35; }
+    }
+
+    @media (max-width: 1320px) {
+      .shell {
+        grid-template-columns: 88px 1fr;
+      }
+
+      .side {
+        grid-column: 1 / -1;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto auto;
+      }
+
+      .side .side-panel:last-child {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .shell {
+        grid-template-columns: 1fr;
+        padding: 18px;
+      }
+
+      .rail {
+        grid-template-columns: auto 1fr auto;
+        display: grid;
+        align-items: center;
+        gap: 16px;
+        padding: 16px;
+      }
+
+      .brand,
+      .rail-nav,
+      .rail-meta {
+        display: flex;
+        align-items: center;
+      }
+
+      .hero-grid,
+      .matrix,
+      .side {
+        grid-template-columns: 1fr;
+      }
+
+      .ring-stage {
+        border-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding-left: 0;
+        padding-top: 20px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .topbar {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      .metric-rack,
+      .kpi-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .bars,
+      .bar-labels {
+        gap: 6px;
+      }
+
+      .headline {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <aside class="rail" aria-label="Primary Navigation">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"></div>
+      </div>
+      <nav class="rail-nav">
+        <div class="nav-btn active">⌘</div>
+        <div class="nav-btn">◫</div>
+        <div class="nav-btn">◎</div>
+        <div class="nav-btn">△</div>
+      </nav>
+      <div class="rail-meta">
+        <div class="meta-pill">CN</div>
+        <div class="meta-pill">24</div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <section class="topbar">
+        <div>
+          <div class="eyebrow">Nova Vector Command</div>
+          <h1 class="headline">全球业务态势总览</h1>
+          <p class="subcopy">聚合营收强度、网络健康度、履约压力与区域异常信号，面向高层指挥与实时决策。</p>
+        </div>
+        <div class="top-actions">
+          <div class="status-chip">Synced 03:27 CST</div>
+          <div class="ghost-btn">Scenario Layer</div>
+        </div>
+      </section>
+
+      <section class="hero">
+        <div class="hero-grid">
+          <div class="signal">
+            <div>
+              <div class="eyebrow">Operational Pulse</div>
+              <h2 class="headline" style="font-size: clamp(34px, 4vw, 58px); margin-bottom: 10px;">91.4%</h2>
+              <p class="subcopy">核心系统在线率维持高位，北美配送链路恢复，东南亚市场热度持续抬升。</p>
+            </div>
+            <div class="signal-row">
+              <div class="micro-pill">Revenue stream stable</div>
+              <div class="micro-pill">Latency under target</div>
+              <div class="micro-pill">2 critical signals</div>
+            </div>
+            <div class="metric-rack">
+              <div class="metric">
+                <div class="metric-label">实时营收</div>
+                <div class="metric-value">$8.42M</div>
+                <div class="metric-trend">▲ 12.6% vs yesterday</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">履约成功率</div>
+                <div class="metric-value">98.7%</div>
+                <div class="metric-trend">▲ 1.8% within SLA</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">风险暴露</div>
+                <div class="metric-value">14.2</div>
+                <div class="metric-trend down">▼ 3.1 from peak alert</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ring-stage">
+            <div class="ring-wrap">
+              <svg class="ring-svg" viewBox="0 0 240 240" aria-hidden="true">
+                <defs>
+                  <linearGradient id="ringA" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#76e7ff"></stop>
+                    <stop offset="100%" stop-color="#7b8cff"></stop>
+                  </linearGradient>
+                  <linearGradient id="ringB" x1="100%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#9cffbc"></stop>
+                    <stop offset="100%" stop-color="#76e7ff"></stop>
+                  </linearGradient>
+                </defs>
+                <circle cx="120" cy="120" r="92" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="14"></circle>
+                <circle cx="120" cy="120" r="92" fill="none" stroke="url(#ringA)" stroke-width="14" stroke-linecap="round" stroke-dasharray="428 578"></circle>
+                <circle cx="120" cy="120" r="68" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="10"></circle>
+                <circle cx="120" cy="120" r="68" fill="none" stroke="url(#ringB)" stroke-width="10" stroke-linecap="round" stroke-dasharray="290 427"></circle>
+              </svg>
+              <div class="ring-label">
+                <strong>6.8x</strong>
+                <span>Forecast Lift</span>
+              </div>
+            </div>
+            <div class="ring-footer">
+              <span>Demand Amplifier 84%</span>
+              <span>Risk Buffer 67%</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="matrix">
+        <div class="chart-panel">
+          <div class="section-head">
+            <div>
+              <h3 class="section-title">多维性能曲线</h3>
+              <p class="section-note">过去 6 个周期的订单吞吐、边缘延迟与能源效率映射。</p>
+            </div>
+            <div class="legend">
+              <span class="l1">Throughput</span>
+              <span class="l2">Latency</span>
+              <span class="l3">Energy</span>
+            </div>
+          </div>
+          <div class="chart-shell">
+            <div class="chart-grid">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <svg class="chart-svg" viewBox="0 0 720 320" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="fillA" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="rgba(118,231,255,0.35)"></stop>
+                  <stop offset="100%" stop-color="rgba(118,231,255,0)"></stop>
+                </linearGradient>
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="6" result="blur"></feGaussianBlur>
+                  <feMerge>
+                    <feMergeNode in="blur"></feMergeNode>
+                    <feMergeNode in="SourceGraphic"></feMergeNode>
+                  </feMerge>
+                </filter>
+              </defs>
+              <path d="M20 248 C90 208, 118 124, 188 142 S300 234, 366 188 S486 54, 560 112 S648 168, 700 72 L700 310 L20 310 Z" fill="url(#fillA)"></path>
+              <path d="M20 248 C90 208, 118 124, 188 142 S300 234, 366 188 S486 54, 560 112 S648 168, 700 72" fill="none" stroke="#76e7ff" stroke-width="4" stroke-linecap="round" filter="url(#glow)"></path>
+              <path d="M20 212 C80 226, 136 88, 206 118 S326 178, 400 142 S526 214, 592 132 S650 76, 700 124" fill="none" stroke="#7b8cff" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="2 10"></path>
+              <path d="M20 272 C96 286, 154 228, 206 202 S320 128, 402 146 S520 204, 602 182 S660 154, 700 182" fill="none" stroke="#9cffbc" stroke-width="3.2" stroke-linecap="round"></path>
+              <g fill="#76e7ff">
+                <circle cx="188" cy="142" r="5"></circle>
+                <circle cx="366" cy="188" r="5"></circle>
+                <circle cx="560" cy="112" r="5"></circle>
+                <circle cx="700" cy="72" r="5"></circle>
+              </g>
+            </svg>
+          </div>
+          <div>
+            <div class="section-head" style="margin-bottom: 12px;">
+              <div>
+                <h3 class="section-title">区域热区分布</h3>
+                <p class="section-note">过去 24 小时高价值流量与部署负载对比。</p>
+              </div>
+            </div>
+            <div class="bars">
+              <div class="bar" style="height: 68%;"></div>
+              <div class="bar" style="height: 92%;"></div>
+              <div class="bar" style="height: 54%;"></div>
+              <div class="bar" style="height: 76%;"></div>
+              <div class="bar" style="height: 84%;"></div>
+              <div class="bar" style="height: 48%;"></div>
+            </div>
+            <div class="bar-labels">
+              <span>Tokyo</span>
+              <span>Dubai</span>
+              <span>Paris</span>
+              <span>Seoul</span>
+              <span>Miami</span>
+              <span>Berlin</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="stack">
+          <div class="list-block">
+            <div class="section-head">
+              <div>
+                <h3 class="section-title">关键告警</h3>
+                <p class="section-note">需要指挥层关注的即时事项。</p>
+              </div>
+            </div>
+            <div class="list-item">
+              <div class="dot"></div>
+              <div>
+                <strong>边缘节点自动扩容已接管</strong>
+                <p>新加坡与首尔集群压力上行，系统已将冗余节点提升至 82%。</p>
+              </div>
+              <time>+03m</time>
+            </div>
+            <div class="list-item">
+              <div class="dot warn"></div>
+              <div>
+                <strong>中东区域配送链路波动</strong>
+                <p>预计 34 分钟内恢复至基线，当前路线切换成功率 96.2%。</p>
+              </div>
+              <time>+11m</time>
+            </div>
+            <div class="list-item">
+              <div class="dot risk"></div>
+              <div>
+                <strong>高风险请求正在被清洗</strong>
+                <p>异常访问峰值已被策略拦截，WAF 模型完成动态权重更新。</p>
+              </div>
+              <time>+19m</time>
+            </div>
+          </div>
+
+          <div class="list-block">
+            <div class="section-head">
+              <div>
+                <h3 class="section-title">决策建议</h3>
+                <p class="section-note">基于当前态势生成的运营动作。</p>
+              </div>
+            </div>
+            <div>
+              <div class="mini-title">拉高东亚预算池</div>
+              <div class="mini-copy">建议对高转化市场追加 12% 投放，以承接即时增长窗口。</div>
+            </div>
+            <div>
+              <div class="mini-title">降低非峰值算力留存</div>
+              <div class="mini-copy">美东区域可回收 8.7% 空闲算力，优化单位能耗成本。</div>
+            </div>
+            <div>
+              <div class="mini-title">锁定高净值客群路径</div>
+              <div class="mini-copy">将高意图人群路由到低延迟链路，可进一步提升完成率。</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="side">
+      <section class="side-panel">
+        <div class="section-head">
+          <div>
+            <h3 class="section-title">指挥核心</h3>
+            <p class="section-note">融合预测引擎与情景模拟结果。</p>
+          </div>
+        </div>
+        <div class="beam">
+          <div class="beam-sweep"></div>
+          <div class="beam-core">
+            <div>
+              <strong>47</strong>
+              <span>active vectors</span>
+            </div>
+          </div>
+        </div>
+        <div class="kpi-strip">
+          <div class="kpi">
+            <strong>3.9h</strong>
+            <span>Recovery window</span>
+          </div>
+          <div class="kpi">
+            <strong>82%</strong>
+            <span>Automation share</span>
+          </div>
+          <div class="kpi">
+            <strong>12</strong>
+            <span>Risk clusters</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="side-panel">
+        <div class="section-head">
+          <div>
+            <h3 class="section-title">行动时间线</h3>
+            <p class="section-note">接下来 90 分钟关键执行节点。</p>
+          </div>
+        </div>
+        <div class="timeline">
+          <div class="track">
+            <span class="point"></span>
+            <h4>03:35 自动价格策略切换</h4>
+            <p>高需求区域进入弹性定价，预计毛利提升 2.3%。</p>
+          </div>
+          <div class="track">
+            <span class="point"></span>
+            <h4>03:52 华南仓配波峰预警</h4>
+            <p>系统将预分配 2 个干线批次，避免 04:10 后产生拥塞。</p>
+          </div>
+          <div class="track">
+            <span class="point"></span>
+            <h4>04:06 安全策略模型刷新</h4>
+            <p>新规则将覆盖最新攻击模式，预计误报率下降 18%。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="side-panel">
+        <div class="section-head">
+          <div>
+            <h3 class="section-title">战略评分板</h3>
+            <p class="section-note">按综合价值、韧性与增长潜力排序。</p>
+          </div>
+          <div class="score">Q1</div>
+        </div>
+        <div class="list-item">
+          <div class="dot"></div>
+          <div>
+            <strong>Asia Growth Corridor</strong>
+            <p>转化速度与复购强度同步走高，适合继续加码。</p>
+          </div>
+          <div class="score">94</div>
+        </div>
+        <div class="list-item">
+          <div class="dot warn"></div>
+          <div>
+            <strong>MEA Fulfillment Loop</strong>
+            <p>收益稳定，但需持续观察配送链路韧性。</p>
+          </div>
+          <div class="score">81</div>
+        </div>
+        <div class="list-item">
+          <div class="dot"></div>
+          <div>
+            <strong>Premium Retention Grid</strong>
+            <p>高净值客群贡献突出，可推进专属体验策略。</p>
+          </div>
+          <div class="score">88</div>
+        </div>
+        <div class="footer-note">
+          <span>Model Confidence 97.2%</span>
+          <span class="live">Live Signal</span>
+        </div>
+      </section>
+    </aside>
+  </div>
+</body>
+</html>
