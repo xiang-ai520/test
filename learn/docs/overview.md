@@ -12,8 +12,8 @@
 ## 当前约束
 - 前端框架：**React + Vite**
 - 先做：**局域网版本**
-- 开发节奏：**按 Phase 顺序执行，当前阶段验证通过后才能继续下一阶段**
-- 当前先做：**文档与环境说明，不安装环境**
+- 开发节奏：**按 Phase 顺序执行，当前阶段验证通过后再进入下一阶段**
+- AI 与语音：**当前为 mock 协议与占位实现**，真实模型 / STT / TTS 在后续替换适配器即可
 
 ## 总体架构
 
@@ -25,11 +25,10 @@
   └─ HTTP：页面与静态资源
 
 本地电脑
-  ├─ signaling：Node.js WebSocket 信令服务
-  ├─ media：直播媒体服务（后续接 SRS）
-  ├─ ai-gateway：本地多模态 AI 网关
-  ├─ stt / tts：本地语音识别与语音合成（后续）
-  └─ model runtime：本地模型运行环境（后续）
+  ├─ signaling：Node.js WebSocket 信令服务（1v1 + 直播信令）
+  ├─ media：SRS 配置与说明（`app/media`，直播推拉流）
+  ├─ ai-gateway：Node.js WebSocket AI 网关（文本 / 图像 / 语音协议 + mock 流式与 mock STT/TTS）
+  └─ （后续）真实 model runtime、Whisper 类 STT、本地 TTS 服务，通过适配器接入网关
 ```
 
 ## 模块职责
@@ -59,10 +58,11 @@
 
 ### ai-gateway
 负责：
-- 接收文本、音频、截图帧等输入
-- 统一封装成本地模型请求
-- 流式输出 AI 响应
-- 屏蔽不同本地模型之间的接口差异
+- 接收文本、图像帧（base64）、整段录音（base64）等输入
+- 会话内存状态（如最近图像元信息）
+- 流式输出文本类 `response.delta` / `response.done`
+- Phase 4：mock STT（`stt.result`）→ mock 文本回复 → mock TTS（`response.audio`，WAV）
+- 屏蔽不同本地模型 / STT / TTS 实现差异（适配器位于 `app/ai-gateway/src/adapters/` 等）
 
 ## Phase 路线图
 
@@ -102,24 +102,44 @@
 
 这样每一步都能明确定位问题，成功率更高。
 
-## 后续代码建议目录
+## 代码与文档目录
 
 ```text
 learn/
   docs/
     overview.md
     environment.md
+    deployment.md
     phase-1.md
     phase-2.md
     phase-3.md
-    deployment.md
+    phase-4.md
+    phase-5.md
+    phase-1-verification.md
+    phase-2-verification.md
+    phase-3-verification.md
+    phase-4-verification.md
+    phase-5-verification.md
+    live-interaction-mock.md
   app/
-    frontend/
-    signaling/
-    media/
-    ai-gateway/
-    shared/
+    frontend/      # React + Vite，含 /room、/live/*、/ai
+    signaling/     # WebSocket 信令（含直播礼物/连麦 mock）
+    media/         # SRS 配置与说明
+    ai-gateway/    # AI WebSocket 网关（Phase 3–5 mock）
 ```
 
-## 当前状态
-当前只进入文档阶段，尚未开始安装环境与编写 Phase 1 代码。
+说明：`shared/` 目录未单独建立；前后端协议以 `docs/phase-3.md`、`docs/phase-4.md`、`docs/phase-5.md` 及 `docs/live-interaction-mock.md` 等为参考。
+
+## 当前实现状态（摘要）
+
+| 阶段 | 状态 | 说明 |
+|------|------|------|
+| Phase 1 | 已实现 | 1v1 通话，`/room/:roomId` |
+| Phase 2 | 已实现 | SRS 直播，`/live/host|audience/:roomId` |
+| Phase 3 | 已实现 | `/ai`，文本 + 截图，`ai-gateway` mock 流式 |
+| Phase 4 | 已实现 | 同页语音：录音上传 → mock STT → mock 文本 → mock TTS 播放 |
+| Phase 5 | 已实现 | `/ai` 截帧来源 + 网关「画面上下文」拼入文本/语音 mock |
+| 直播互动 mock | 已实现 | 礼物广播、连麦申请/同意（无第二路 SRS），见 `docs/live-interaction-mock.md` |
+| Phase 6+ | 未实现 | 外网与生产化等，见 `plan.md` |
+
+详细验证步骤见各阶段的 `phase-*-verification.md` 与 **`docs/live-interaction-mock.md`**。

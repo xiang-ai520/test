@@ -17,7 +17,13 @@ export const SIGNALING_MESSAGE_TYPES = {
   liveState: 'live-state',
   hostOnline: 'host-online',
   hostOffline: 'host-offline',
-  audienceCount: 'audience-count'
+  audienceCount: 'audience-count',
+  sendLiveGift: 'send-live-gift',
+  liveGift: 'live-gift',
+  requestLinkMic: 'request-link-mic',
+  linkMicRequest: 'link-mic-request',
+  respondLinkMic: 'respond-link-mic',
+  linkMicState: 'link-mic-state'
 }
 
 const hostname = window.location.hostname || 'localhost'
@@ -34,3 +40,8 @@ export const MEDIA_SERVER_CONFIG = {
 }
 
 export const DEFAULT_ICE_SERVERS = []
+
+export const AI_GATEWAY_WS_URL =
+  hostname === 'localhost'
+    ? 'ws://localhost:8790'
+    : `ws://${hostname}:8790`

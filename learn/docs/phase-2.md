@@ -10,6 +10,8 @@
 ## 推荐技术路线
 建议使用本地部署的媒体服务：**SRS**。
 
+Docker 一键启动与命令见 **`app/media/README.md`（方式 A）** 与同目录 **`docker-compose.yml`**。
+
 原因：
 - 本地部署简单
 - 支持直播常见协议
@@ -95,3 +97,7 @@
 - 真机局域网访问可用
 
 通过后再进入 Phase 3。
+
+## 运行与验证（实操）
+
+步骤与命令见 **`docs/phase-2-verification.md`**。

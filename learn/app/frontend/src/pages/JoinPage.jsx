@@ -36,12 +36,16 @@ export function JoinPage() {
     navigateTo(`/live/audience/${encodeURIComponent(nextRoomId)}`)
   }
 
+  function handleAiSession() {
+    navigate('/ai')
+  }
+
   return (
     <main className="page join-page">
       <section className="card hero-card">
-        <p className="eyebrow">Phase 1 · LAN 1v1 / Phase 2 · Live</p>
+        <p className="eyebrow">Phase 1 · LAN 1v1 / Phase 2 · Live / Phase 3–4 · AI</p>
         <h1>局域网视频通话与直播</h1>
-        <p className="description">同一 WiFi 下，你可以继续进入 1v1 通话房间，或进入 Phase 2 的直播模式：主播开播、观众观看。</p>
+        <p className="description">同一 WiFi 下，你可以进入 1v1 通话、直播，或打开 AI 会话页（Phase 3 文本/截图 + Phase 4 语音闭环，网关 mock）。</p>
         <form className="join-form" onSubmit={handleCallSubmit}>
           <label>
             <span>房间号</span>
@@ -55,6 +59,7 @@ export function JoinPage() {
             <button type="submit">进入 1v1 通话</button>
             <button type="button" className="secondary" onClick={handleHostLive}>作为主播开播</button>
             <button type="button" className="secondary" onClick={handleAudienceLive}>作为观众观看</button>
+            <button type="button" className="secondary" onClick={handleAiSession}>AI 会话（文本 / 图像 / 语音）</button>
           </div>
         </form>
       </section>

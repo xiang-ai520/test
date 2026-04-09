@@ -1,0 +1,13 @@
+{
+  "name": "lan-ai-gateway",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "node src/server.js",
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.2"
+  }
+}

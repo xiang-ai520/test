@@ -2,12 +2,15 @@ import { WebSocketServer } from 'ws'
 import { getOtherPeers, getPeerSocket, joinRoom, leaveRoom } from './room-manager.js'
 import {
   getLiveAudienceSockets,
-  getLiveRoomState,
+  getLiveHostSocket,
+  getLiveRoomIdForPeer,
   getLiveRoomSockets,
+  isLiveAudienceInRoom,
   joinLiveRoom,
   leaveLiveRoom,
   startLive,
-  stopLive
+  stopLive,
+  updateLiveLinkMic
 } from './live-room-manager.js'
 import { MESSAGE_TYPES } from './protocol.js'
 
@@ -55,6 +58,14 @@ function notifyLeave(peerId) {
 function notifyLiveLeave(peerId) {
   const result = leaveLiveRoom(peerId)
   if (!result) return
+
+  if (result.broadcastLinkMicClear) {
+    broadcast(getLiveRoomSockets(result.roomId), {
+      type: MESSAGE_TYPES.linkMicState,
+      roomId: result.roomId,
+      payload: { linkedMic: null }
+    })
+  }
 
   if (result.role === 'host') {
     broadcast(getLiveAudienceSockets(result.roomId), {
@@ -203,6 +214,87 @@ wss.on('connection', (socket) => {
           roomId,
           peerId,
           payload: result.state
+        })
+        break
+      }
+      case MESSAGE_TYPES.sendLiveGift: {
+        const { roomId, peerId, payload } = message
+        if (!roomId || !peerId || socket.peerId !== peerId) {
+          send(socket, { type: MESSAGE_TYPES.error, message: 'invalid gift message' })
+          break
+        }
+        if (socket.connectionType !== 'live') {
+          send(socket, { type: MESSAGE_TYPES.error, message: 'not in live room' })
+          break
+        }
+        if (getLiveRoomIdForPeer(peerId) !== roomId) {
+          send(socket, { type: MESSAGE_TYPES.error, message: 'room mismatch' })
+          break
+        }
+        broadcast(getLiveRoomSockets(roomId), {
+          type: MESSAGE_TYPES.liveGift,
+          roomId,
+          peerId,
+          payload: {
+            giftId: payload?.giftId || 'unknown',
+            label: payload?.label || '礼物',
+            count: Number(payload?.count) > 0 ? Number(payload.count) : 1,
+            fromName: payload?.fromName || '观众'
+          }
+        })
+        break
+      }
+      case MESSAGE_TYPES.requestLinkMic: {
+        const { roomId, peerId, payload } = message
+        if (!roomId || !peerId || socket.peerId !== peerId) {
+          send(socket, { type: MESSAGE_TYPES.error, message: 'invalid link mic request' })
+          break
+        }
+        if (socket.connectionType !== 'live') {
+          send(socket, { type: MESSAGE_TYPES.error, message: 'not in live room' })
+          break
+        }
+        if (!isLiveAudienceInRoom(peerId, roomId)) {
+          send(socket, { type: MESSAGE_TYPES.error, message: 'only audience can request link mic' })
+          break
+        }
+        const hostSocket = getLiveHostSocket(roomId)
+        if (!hostSocket) {
+          send(socket, { type: MESSAGE_TYPES.error, message: 'host offline' })
+          break
+        }
+        send(hostSocket, {
+          type: MESSAGE_TYPES.linkMicRequest,
+          roomId,
+          peerId,
+          payload: {
+            requesterPeerId: peerId,
+            requesterName: payload?.peerName || '观众'
+          }
+        })
+        break
+      }
+      case MESSAGE_TYPES.respondLinkMic: {
+        const { roomId, peerId, payload } = message
+        if (!roomId || !peerId || socket.peerId !== peerId) {
+          send(socket, { type: MESSAGE_TYPES.error, message: 'invalid respond link mic' })
+          break
+        }
+        const result = updateLiveLinkMic({
+          roomId,
+          hostPeerId: peerId,
+          accept: Boolean(payload?.accept),
+          targetPeerId: payload?.targetPeerId || '',
+          targetPeerName: payload?.targetPeerName || ''
+        })
+        if (!result.ok) {
+          send(socket, { type: MESSAGE_TYPES.error, message: result.error })
+          break
+        }
+        broadcast(getLiveRoomSockets(roomId), {
+          type: MESSAGE_TYPES.linkMicState,
+          roomId,
+          payload: { linkedMic: result.linkedMic }
         })
         break
       }

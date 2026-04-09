@@ -41,7 +41,9 @@ npm run dev
 ```
 
 ### 3. 启动 SRS
-请确保本地 SRS 已按 `app/media/README.md` 和 `app/media/srs.conf` 启动。
+推荐 Docker：在 `learn/app/media` 执行 `docker compose up -d`（详见 **`app/media/README.md` · 方式 A**）。手机 WebRTC 需配置 **`SRS_CANDIDATE`** 为本机局域网 IP。
+
+若不用 Docker，请自行安装 SRS，保证 **1985 / 8080 / 8000(udp)** 与 `srs.conf` 一致。
 
 ## 验证步骤
 ### 验证 1：主播页可进入
@@ -93,3 +95,12 @@ npm run dev
 4. 停播后状态同步正确。
 5. 手机真机局域网可用。
 6. Phase 1 通话回归无异常。
+
+## 可选验证 7：礼物与连麦（信令 mock）
+
+不涉及 SRS，仅验证 signaling + 前端：
+
+- 双浏览器分别打开 **同一 `roomId`** 的 **主播页** 与 **观众页**（需带不同 `peerId`）。
+- 观众 **送礼**、**申请连麦**，主播 **同意连麦**，观察礼物列表与连麦占位格。
+
+步骤与消息类型见 **`docs/live-interaction-mock.md`**。

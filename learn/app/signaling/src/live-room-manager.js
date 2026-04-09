@@ -1,6 +1,21 @@
 const liveRooms = new Map()
 const livePeerIndex = new Map()
 
+function getViewerCount(room) {
+  return room.audiences.size
+}
+
+function buildLiveState(room) {
+  return {
+    liveStatus: room.liveStatus,
+    hostPeerId: room.host?.peerId || '',
+    viewerCount: getViewerCount(room),
+    streamName: room.streamName,
+    playbackUrl: room.playbackUrl,
+    linkedMic: room.linkedMic || null
+  }
+}
+
 function getRoom(roomId) {
   if (!liveRooms.has(roomId)) {
     liveRooms.set(roomId, {
@@ -8,14 +23,11 @@ function getRoom(roomId) {
       audiences: new Map(),
       liveStatus: 'idle',
       streamName: '',
-      playbackUrl: ''
+      playbackUrl: '',
+      linkedMic: null
     })
   }
   return liveRooms.get(roomId)
-}
-
-function getViewerCount(room) {
-  return room.audiences.size
 }
 
 export function joinLiveRoom({ roomId, peerId, socket, role }) {
@@ -34,13 +46,7 @@ export function joinLiveRoom({ roomId, peerId, socket, role }) {
 
   return {
     ok: true,
-    state: {
-      liveStatus: room.liveStatus,
-      hostPeerId: room.host?.peerId || '',
-      viewerCount: getViewerCount(room),
-      streamName: room.streamName,
-      playbackUrl: room.playbackUrl
-    }
+    state: buildLiveState(room)
   }
 }
 
@@ -54,15 +60,25 @@ export function leaveLiveRoom(peerId) {
     return null
   }
 
+  let broadcastLinkMicClear = false
+
   if (entry.role === 'host' && room.host?.peerId === peerId) {
     room.host = null
     room.liveStatus = 'ended'
     room.streamName = ''
     room.playbackUrl = ''
+    if (room.linkedMic) {
+      room.linkedMic = null
+      broadcastLinkMicClear = true
+    }
   }
 
   if (entry.role === 'audience') {
     room.audiences.delete(peerId)
+    if (room.linkedMic?.peerId === peerId) {
+      room.linkedMic = null
+      broadcastLinkMicClear = true
+    }
   }
 
   livePeerIndex.delete(peerId)
@@ -74,13 +90,8 @@ export function leaveLiveRoom(peerId) {
   return {
     roomId: entry.roomId,
     role: entry.role,
-    state: room ? {
-      liveStatus: room.liveStatus,
-      hostPeerId: room.host?.peerId || '',
-      viewerCount: getViewerCount(room),
-      streamName: room.streamName,
-      playbackUrl: room.playbackUrl
-    } : null
+    broadcastLinkMicClear,
+    state: room ? buildLiveState(room) : null
   }
 }
 
@@ -96,13 +107,7 @@ export function startLive({ roomId, peerId, streamName, playbackUrl }) {
 
   return {
     ok: true,
-    state: {
-      liveStatus: room.liveStatus,
-      hostPeerId: room.host?.peerId || '',
-      viewerCount: getViewerCount(room),
-      streamName: room.streamName,
-      playbackUrl: room.playbackUrl
-    }
+    state: buildLiveState(room)
   }
 }
 
@@ -118,13 +123,7 @@ export function stopLive({ roomId, peerId }) {
 
   return {
     ok: true,
-    state: {
-      liveStatus: room.liveStatus,
-      hostPeerId: room.host?.peerId || '',
-      viewerCount: getViewerCount(room),
-      streamName: room.streamName,
-      playbackUrl: room.playbackUrl
-    }
+    state: buildLiveState(room)
   }
 }
 
@@ -136,17 +135,12 @@ export function getLiveRoomState(roomId) {
       hostPeerId: '',
       viewerCount: 0,
       streamName: '',
-      playbackUrl: ''
+      playbackUrl: '',
+      linkedMic: null
     }
   }
 
-  return {
-    liveStatus: room.liveStatus,
-    hostPeerId: room.host?.peerId || '',
-    viewerCount: getViewerCount(room),
-    streamName: room.streamName,
-    playbackUrl: room.playbackUrl
-  }
+  return buildLiveState(room)
 }
 
 export function getLiveAudienceSockets(roomId) {
@@ -161,4 +155,33 @@ export function getLiveRoomSockets(roomId) {
   const sockets = [...room.audiences.values()]
   if (room.host?.socket) sockets.push(room.host.socket)
   return sockets
+}
+
+export function getLiveHostSocket(roomId) {
+  const room = liveRooms.get(roomId)
+  return room?.host?.socket ?? null
+}
+
+export function getLiveRoomIdForPeer(peerId) {
+  return livePeerIndex.get(peerId)?.roomId ?? null
+}
+
+export function isLiveAudienceInRoom(peerId, roomId) {
+  const entry = livePeerIndex.get(peerId)
+  return Boolean(entry && entry.roomId === roomId && entry.role === 'audience')
+}
+
+export function updateLiveLinkMic({ roomId, hostPeerId, accept, targetPeerId, targetPeerName }) {
+  const room = liveRooms.get(roomId)
+  if (!room || room.host?.peerId !== hostPeerId) {
+    return { ok: false, error: 'host not found' }
+  }
+  if (!accept) {
+    return { ok: true, linkedMic: room.linkedMic, state: buildLiveState(room) }
+  }
+  if (!targetPeerId) {
+    return { ok: false, error: 'targetPeerId required' }
+  }
+  room.linkedMic = { peerId: targetPeerId, peerName: targetPeerName || '观众' }
+  return { ok: true, linkedMic: room.linkedMic, state: buildLiveState(room) }
 }

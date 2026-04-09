@@ -199,3 +199,7 @@ app/
 - 基本断线恢复可用
 
 只有确认 OK，才进入 Phase 2。
+
+## 运行与验证（实操）
+
+步骤与命令见 **`docs/phase-1-verification.md`**。

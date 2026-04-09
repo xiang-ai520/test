@@ -7,12 +7,27 @@
 - 信令服务与后续 AI 网关也通过局域网 IP 暴露
 
 ## 局域网访问方式
-后续运行服务后，典型访问方式会类似：
+开发与验证时，典型访问方式如下（默认端口以当前仓库实现为准，可在各服务内通过环境变量或配置修改）。
 
-- 前端页面：`http://电脑局域网IP:前端端口`
-- 信令服务：`ws://电脑局域网IP:信令端口`
-- AI 网关：`ws://电脑局域网IP:AI网关端口`
-- 直播服务：`http://电脑局域网IP:直播端口`
+| 服务 | 默认地址（局域网将 `localhost` 换为电脑 IP） | 说明 |
+|------|---------------------------------------------|------|
+| 前端（Vite） | `http://localhost:5173` | `learn/app/frontend`，`npm run dev` 已 `--host 0.0.0.0` |
+| 信令 | `ws://localhost:8788` | `learn/app/signaling` |
+| AI 网关 | `ws://localhost:8790` | `learn/app/ai-gateway` |
+| SRS HTTP | `http://localhost:8080` | 播放页等（Phase 2） |
+| SRS API | `http://localhost:1985` | WebRTC publish/play API（Phase 2） |
+
+AI 会话页路由：`/ai`（需同时启动 `ai-gateway` 与前端）。
+
+## SRS 媒体服务（Docker）
+
+Phase 2 直播依赖本机 SRS。推荐使用 **`learn/app/media/docker-compose.yml`** 一键启动，具体命令、端口与 **`SRS_CANDIDATE`（手机 WebRTC 必看）** 见：
+
+- **[learn/app/media/README.md](../app/media/README.md)**（「方式 A：Docker 启动 SRS」）
+
+摘要：在 `learn/app/media` 目录执行 `docker compose up -d`；真机访问前将 `.env` 中 **`SRS_CANDIDATE`** 设为电脑 **局域网 IP**。
+
+外网或统一入口阶段再改为 **HTTPS / WSS**（见下文「未来外网扩展」）。
 
 ## 局域网验证前提
 1. 手机和电脑在同一 WiFi

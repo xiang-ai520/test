@@ -3,11 +3,13 @@ import { JoinPage } from './pages/JoinPage.jsx'
 import { RoomPage } from './pages/RoomPage.jsx'
 import { HostLivePage } from './pages/HostLivePage.jsx'
 import { AudienceLivePage } from './pages/AudienceLivePage.jsx'
+import { AiSessionPage } from './pages/AiSessionPage.jsx'
 
 export default function App() {
   return (
     <Routes>
       <Route path="/" element={<JoinPage />} />
+      <Route path="/ai" element={<AiSessionPage />} />
       <Route path="/room/:roomId" element={<RoomPage />} />
       <Route path="/live/host/:roomId" element={<HostLivePage />} />
       <Route path="/live/audience/:roomId" element={<AudienceLivePage />} />

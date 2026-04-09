@@ -1,0 +1,21 @@
+# SRS（Simple Realtime Server）— 与 learn Phase 2 WebRTC 推拉流配套
+# 在 **本目录** 执行：docker compose up -d
+# 局域网真机 WebRTC：务必配置 SRS_CANDIDATE（见 README.md、.env.example）
+
+services:
+  srs:
+    image: ossrs/srs:6
+    container_name: srs-learn
+    restart: unless-stopped
+    ports:
+      - "1935:1935" # RTMP
+      - "1985:1985" # HTTP API（前端 RTC 信令）
+      - "8080:8080" # HLS / HTTP 服务
+      - "8000:8000/udp" # WebRTC UDP
+    environment:
+      # 官方镜像会用于 WebRTC candidate；手机拉流时请填 **本机局域网 IP**
+      - CANDIDATE=${SRS_CANDIDATE:-127.0.0.1}
+    volumes:
+      - ./srs.conf:/usr/local/srs/conf/docker.conf:ro
+    working_dir: /usr/local/srs
+    command: ./objs/srs -c conf/docker.conf

@@ -1,18 +1,19 @@
 import { useEffect, useRef } from 'react'
 
-export function VideoPanel({ title, stream, src = '', muted = false, emptyText }) {
-  const videoRef = useRef(null)
+export function VideoPanel({ title, stream, src = '', muted = false, emptyText, videoRef: videoRefProp }) {
+  const fallbackRef = useRef(null)
+  const videoRef = videoRefProp ?? fallbackRef
 
   useEffect(() => {
     if (!videoRef.current) return
     videoRef.current.srcObject = stream || null
-  }, [stream])
+  }, [stream, videoRef])
 
   useEffect(() => {
     if (!videoRef.current) return
     if (stream) return
     videoRef.current.src = src || ''
-  }, [src, stream])
+  }, [src, stream, videoRef])
 
   const hasVideo = Boolean(stream || src)
 

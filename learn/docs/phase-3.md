@@ -54,9 +54,12 @@
   "type": "input.image",
   "sessionId": "ai-session-001",
   "mimeType": "image/jpeg",
-  "data": "base64..."
+  "data": "base64...",
+  "source": "manual"
 }
 ```
+
+可选字段 **`source`**：`timer`（定时截帧）、`manual`（默认）、`event`（事件截帧）等；用于 Phase 5 画面上下文统计，见 **`docs/phase-5.md`**。
 
 ### response.delta
 ```json
@@ -126,3 +129,20 @@
 
 ## 通过门禁
 确认协议和 mock 链路跑通后，才能进入 Phase 4 的语音链路。
+
+## 代码实现对照（仓库现状）
+
+以下为 `learn/app` 中与 Phase 3 对应的主要路径，便于对照阅读与排错：
+
+| 模块 | 路径 | 说明 |
+|------|------|------|
+| AI 网关入口 | `ai-gateway/src/server.js` | WebSocket，默认 `0.0.0.0:8790`，环境变量 `PORT` / `HOST` |
+| 协议常量 | `ai-gateway/src/protocol.js` | 与本文 JSON `type` 一致 |
+| 会话状态 | `ai-gateway/src/session-store.js` | 内存会话，记录最近图像等 |
+| 文本 / 图像 mock | `ai-gateway/src/mock-adapter.js` | 流式 `response.delta` + `response.done` |
+| 前端配置 | `frontend/src/lib/config.js` | `AI_GATEWAY_WS_URL`（`localhost` 与局域网 hostname） |
+| 前端协议常量 | `frontend/src/lib/aiProtocol.js` | 与网关对齐 |
+| AI 会话页 | `frontend/src/pages/AiSessionPage.jsx` | 路由 `/ai` |
+| 网关连接与聊天状态 | `frontend/src/hooks/useAiGateway.js` | WebSocket、流式拼接 |
+
+运行与验收步骤见 **`docs/phase-3-verification.md`**。Phase 4 在 Phase 3 协议上增加了语音相关消息类型，见 **`docs/phase-4.md`**。
