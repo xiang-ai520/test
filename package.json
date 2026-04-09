@@ -1,0 +1,20 @@
+{
+  "name": "pixel-quest-run-3d",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@dimforge/rapier3d-compat": "^0.19.3",
+    "@pixiv/three-vrm": "^3.5.1",
+    "adm-zip": "^0.5.16",
+    "node-fetch": "^3.3.2",
+    "three": "^0.183.2"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node --check \"/d/workspace/test/src/world/LevelBuilder.js\")",
+      "Bash(node --check \"/d/workspace/test/src/scene/SceneManager.js\")",
+      "Bash(node --check \"/d/workspace/test/src/visual/ToonMaterials.js\" && node --check \"/d/workspace/test/src/world/LevelData.js\" && node --check \"/d/workspace/test/src/ui/HudOverlay.js\")",
+      "Bash(powershell -NoProfile -Command \"Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -match 'workspace\\\\\\\\test|vite|http-server|serve' } | Select-Object ProcessId,Name,CommandLine | Format-Table -AutoSize\")"
+    ]
+  }
+}

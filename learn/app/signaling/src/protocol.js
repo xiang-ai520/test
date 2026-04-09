@@ -1,0 +1,21 @@
+export const MESSAGE_TYPES = {
+  joinRoom: 'join-room',
+  roomState: 'room-state',
+  peerJoined: 'peer-joined',
+  peerReady: 'peer-ready',
+  offer: 'offer',
+  answer: 'answer',
+  iceCandidate: 'ice-candidate',
+  peerLeft: 'peer-left',
+  error: 'error',
+  ping: 'ping',
+  pong: 'pong',
+  joinLiveRoom: 'join-live-room',
+  leaveLiveRoom: 'leave-live-room',
+  startLive: 'start-live',
+  stopLive: 'stop-live',
+  liveState: 'live-state',
+  hostOnline: 'host-online',
+  hostOffline: 'host-offline',
+  audienceCount: 'audience-count'
+}
